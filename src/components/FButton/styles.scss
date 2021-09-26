@@ -1,0 +1,17 @@
+@import '../../styles/variables';
+
+.button {
+  @apply text-white opacity-80 rounded-lg p-1 inline-block text-center select-none;
+
+  &.flat {
+    @apply nm-flat-blue-500 px-4;
+  }
+
+  &:hover {
+    @apply opacity-90;
+  }
+
+  &:active {
+    @apply opacity-100;
+  }
+}
