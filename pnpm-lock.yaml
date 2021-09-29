@@ -3,6 +3,7 @@ lockfileVersion: 5.3
 specifiers:
   '@types/node': ^16.10.1
   '@vitejs/plugin-vue': ^1.9.0
+  '@windicss/plugin-animations': ^1.0.9
   color: ^4.0.1
   lodash: ^4.17.21
   sass: ^1.42.1
@@ -21,6 +22,7 @@ dependencies:
 devDependencies:
   '@types/node': 16.10.1
   '@vitejs/plugin-vue': 1.9.2_vite@2.5.10
+  '@windicss/plugin-animations': 1.0.9
   sass: 1.42.1
   typescript: 4.4.3
   vite: 2.5.10
@@ -246,6 +248,10 @@ packages:
       - supports-color
       - ts-node
       - typescript
+    dev: true
+
+  /@windicss/plugin-animations/1.0.9:
+    resolution: {integrity: sha512-9WsQsPzLurkwV5zaMCwmylxfSHlQ1pPmzud4ysvMkMBRB7obub9ESmqlHefcCjEhatz/ZROi1U1XOuOPPUO1nA==}
     dev: true
 
   /@windicss/plugin-utils/1.4.7_typescript@4.4.3:

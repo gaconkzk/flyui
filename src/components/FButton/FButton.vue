@@ -18,6 +18,10 @@ export default defineComponent({
       type: Boolean,
       default: false,
     },
+    activated: {
+      type: Boolean,
+      default: false,
+    },
     variant: {
       type: String,
       default: '',
@@ -59,6 +63,7 @@ export default defineComponent({
       return [
         'button',
         this.nmType,
+        this.activated ? 'activated' : '',
         this.rounded ? 'fround' : '',
         this.variant ?? '',
         this.disabled ? 'disabled' : '',
