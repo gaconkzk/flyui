@@ -4,7 +4,8 @@ import vue from '@vitejs/plugin-vue'
 import WindiCSS from 'vite-plugin-windicss'
 import * as path from 'path'
 
-import type { UserConfig } from 'vite'
+import libInjectCss from './libs/libInjectCss'
+
 // https://vitejs.dev/config/
 export default defineConfig({
   build: {
@@ -33,5 +34,5 @@ export default defineConfig({
       },
     ],
   },
-  plugins: [vue(), WindiCSS()],
+  plugins: [vue(), WindiCSS(), libInjectCss()],
 })
