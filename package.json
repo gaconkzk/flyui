@@ -1,6 +1,6 @@
 {
   "name": "@gaconkzk/flyui",
-  "version": "0.1.0-alpha-2",
+  "version": "0.1.0-alpha-3",
   "files": [
     "dist"
   ],
@@ -10,6 +10,10 @@
     ".": {
       "import": "./dist/flyui.es.js",
       "require": "./dist/flyui.umd.js"
+    },
+    "./style.css": {
+      "import": "./dist/style.css",
+      "require": "./dist/style.css"
     }
   },
   "scripts": {
