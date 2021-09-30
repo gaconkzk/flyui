@@ -1,6 +1,17 @@
 {
   "name": "flyui",
-  "version": "0.0.0",
+  "version": "0.1.0-alpha-1",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/flyui.umd.js",
+  "module": "./dist/flyui.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/flyui.es.js",
+      "require": "./dist/flyui.umd.js"
+    }
+  },
   "scripts": {
     "dev": "vite --host",
     "build": "vue-tsc --noEmit && vite build",

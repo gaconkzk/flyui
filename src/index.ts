@@ -25,8 +25,4 @@ function install(Vue: App) {
   // } as IEqual
 }
 
-export default { install }
-
-// Or we can import separated components
-export { default as FButton } from '@/components/FButton'
-export { default as FDrawer } from '@/components/FDrawer'
+export default { install, FButton, FDrawer }

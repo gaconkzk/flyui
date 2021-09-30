@@ -2,7 +2,6 @@ import { defineConfig } from 'vite-plugin-windicss'
 import neumorphism from './tailwindcss-neumorphism'
 
 import animations from '@windicss/plugin-animations'
-
 module.exports = defineConfig({
   darkMode: 'class',
   attributify: true,
