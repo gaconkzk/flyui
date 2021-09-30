@@ -6,6 +6,8 @@ const components = {
   FDrawer,
 }
 
+import 'virtual:windi.css'
+
 import './styles/index.scss'
 import { App } from 'vue'
 
