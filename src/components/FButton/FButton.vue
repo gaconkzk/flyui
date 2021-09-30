@@ -88,3 +88,38 @@ export default defineComponent({
   },
 })
 </script>
+
+<style lang="scss">
+.button {
+  @apply text-white opacity-80 rounded-lg inline-block text-center select-none py-1 px-4;
+
+  &.flat {
+    @apply nm-flat-blue-500;
+    &.activated,
+    &:active {
+      @apply nm-inset-blue-500;
+    }
+  }
+
+  &.convex {
+    @apply nm-convex-blue-500;
+    &.activated,
+    &:active {
+      @apply nm-concave-blue-500;
+    }
+  }
+
+  &.fround {
+    @apply rounded-full;
+  }
+
+  &:hover {
+    @apply opacity-90;
+  }
+
+  &.activated,
+  &:active {
+    @apply opacity-100;
+  }
+}
+</style>

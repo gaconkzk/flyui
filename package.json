@@ -2,7 +2,8 @@
   "name": "@gaconkzk/flyui",
   "version": "0.1.0-alpha-5",
   "files": [
-    "dist"
+    "dist",
+    "@types"
   ],
   "main": "./dist/flyui.umd.js",
   "module": "./dist/flyui.es.js",
