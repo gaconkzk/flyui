@@ -17,7 +17,7 @@ const toggleDrawer = ref<boolean>(false)
     <f-drawer
       :show="toggleDrawer"
       :toggle="() => (toggleDrawer = !toggleDrawer)"
-      bg-drawer="w-60 nm-flat-blue-500 top-1/2 left-1/2 p-4 rounded-lg transform -translate-x-1/2 -translate-y-1/2"
+      bg-drawer="w-60 top-1/2 left-1/2 p-4 rounded-lg transform -translate-x-1/2 -translate-y-1/2"
       classes="animate-animated animate-fade-in"
       position="fixed"
     >

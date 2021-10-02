@@ -8,7 +8,7 @@
     "
   >
     <div :class="['overlay-drawer', bgOverlay]" @click="outsideClick" />
-    <div :class="drawerClasses">
+    <div :class="['drawer', drawerClasses]">
       <slot v-if="visible" />
     </div>
   </div>
@@ -72,7 +72,6 @@ export default defineComponent({
       }
     }
     const drawerClasses = computed(() => [
-      'drawer',
       props.position,
       props.classes,
       props.bgDrawer,
@@ -147,6 +146,7 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .drawer {
+  @apply nm-flat-blue-500;
   --xyz-in-duration: 0.8s;
   --xyz-out-duration: 0.8s;
 
