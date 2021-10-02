@@ -1,5 +1,5 @@
 <template>
-  <div :class="[btnClass, classes]" tabindex="0" @click="callback">
+  <div :class="['button', btnClass, classes]" tabindex="0" @click="callback">
     <slot />
   </div>
 </template>
@@ -61,7 +61,6 @@ export default defineComponent({
   computed: {
     btnClass(): string[] {
       return [
-        'button',
         this.nmType,
         this.activated ? 'activated' : '',
         this.rounded ? 'fround' : '',
