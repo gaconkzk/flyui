@@ -15,6 +15,9 @@
     "./css": {
       "import": "./dist/style.css",
       "require": "./dist/style.css"
+    },
+    "./types": {
+      "import": "./dist/types/flyui.d.ts"
     }
   },
   "scripts": {
