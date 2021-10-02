@@ -8,7 +8,7 @@
     "
   >
     <div :class="['overlay-drawer', bgOverlay]" @click="outsideClick" />
-    <div :class="['drawer', drawerClasses]">
+    <div :class="['drawer', 'animate-animated animate-fade-in', drawerClasses]">
       <slot v-if="visible" />
     </div>
   </div>
@@ -73,7 +73,7 @@ export default defineComponent({
     }
     const drawerClasses = computed(() => [
       props.position,
-      props.classes ? props.classes : 'animate-animated animate-fade-in',
+      props.classes,
       props.bgDrawer,
     ])
     const putMeAtBody = () => {

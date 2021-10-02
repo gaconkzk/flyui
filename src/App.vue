@@ -18,7 +18,6 @@ const toggleDrawer = ref<boolean>(false)
       :show="toggleDrawer"
       :toggle="() => (toggleDrawer = !toggleDrawer)"
       bg-drawer="w-60 top-1/2 left-1/2 p-4 rounded-lg transform -translate-x-1/2 -translate-y-1/2"
-      classes="animate-animated animate-fade-in"
       position="fixed"
     >
       drawer body hello world confluence hello
