@@ -89,7 +89,7 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .button {
   @apply text-white opacity-80 rounded-lg inline-block text-center select-none py-1 px-4;
 

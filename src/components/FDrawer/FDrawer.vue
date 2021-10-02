@@ -6,7 +6,6 @@
         thisIsMe = el as HTMLElement
       }
     "
-    :data-show="show ? '' : undefined"
   >
     <div :class="['overlay-drawer', bgOverlay]" @click="outsideClick" />
     <div :class="drawerClasses">
@@ -146,7 +145,7 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .drawer {
   --xyz-in-duration: 0.8s;
   --xyz-out-duration: 0.8s;
