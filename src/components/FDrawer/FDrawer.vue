@@ -73,7 +73,7 @@ export default defineComponent({
     }
     const drawerClasses = computed(() => [
       props.position,
-      props.classes,
+      props.classes ? props.classes : 'animate-animated animate-fade-in',
       props.bgDrawer,
     ])
     const putMeAtBody = () => {
