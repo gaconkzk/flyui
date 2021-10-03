@@ -33,6 +33,19 @@ app.mount('#app')
 
 Note you might need windicss and plugin-windicss-animation for better css control in your project (animation not worked when you don't have them)
 
+## Theme primary color
+we need prepare 4 colors for theme - or you can use 4 default color for theme
+
+Define css variables using 4 colors. You can use any color you want, for example I'm using 4 colors from `windicss` (defined in `windi.config.ts`)
+```css
+:root {
+  --f-primary: theme('colors.prim.2');
+  --f-primary-lighter: theme('colors.prim.2-lighter');
+  --f-primary-shadow: theme('colors.prim.2-shadow');
+  --f-primary-highlight: theme('colors.prim.2-highlight');
+}
+```
+
 #### Flies icons license
 
 ```html
