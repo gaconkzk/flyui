@@ -32,6 +32,12 @@ module.exports = defineConfig({
             : Color(colors.warmGray[800]).lighten(0.35).hex(),
         },
       },
+      textColor: {
+        prim: {
+          1: colors.gray[200],
+          2: colors.gray[200],
+        },
+      },
     },
   },
   plugins: [

@@ -90,21 +90,31 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .button {
-  @apply text-white opacity-80 rounded-lg inline-block text-center select-none py-1 px-4;
+  @apply text-$t-primary opacity-80 rounded-lg inline-block text-center select-none py-1 px-4;
 
   &.flat {
     @apply nm-flat-$f-primary;
     &.activated,
-    &:active {
+    &:active,
+    &:hover {
       @apply nm-inset-$f-primary;
+    }
+
+    &:hover {
+      @apply opacity-100;
     }
   }
 
   &.convex {
     @apply nm-convex-$f-primary;
     &.activated,
-    &:active {
+    &:active,
+    &:hover {
       @apply nm-concave-$f-primary;
+    }
+
+    &:hover {
+      @apply opacity-100;
     }
   }
 
