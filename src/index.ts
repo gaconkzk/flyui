@@ -11,7 +11,7 @@ const components = {
 
 import 'virtual:svg-icons-register'
 import 'virtual:windi.css'
-// import './styles/index.scss'
+import './styles/index.scss'
 import { App } from 'vue'
 
 // Use full install all declared components

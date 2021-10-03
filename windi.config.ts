@@ -1,3 +1,4 @@
+import colors from 'windicss/colors'
 import { defineConfig } from 'vite-plugin-windicss'
 import neumorphism from './tailwindcss-neumorphism'
 
@@ -6,7 +7,16 @@ module.exports = defineConfig({
   darkMode: 'class',
   attributify: true,
   transformCSS: 'pre',
-  theme: {},
+  theme: {
+    extend: {
+      colors: {
+        prim: {
+          1: colors.blue[500],
+          2: colors.warmGray[800],
+        },
+      },
+    },
+  },
   plugins: [
     neumorphism,
     animations({

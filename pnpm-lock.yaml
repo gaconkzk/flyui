@@ -1,6 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@types/lodash': ^4.14.175
   '@types/node': ^16.10.1
   '@vitejs/plugin-vue': ^1.9.0
   '@windicss/plugin-animations': ^1.0.9
@@ -21,6 +22,7 @@ dependencies:
   vue: 3.2.19
 
 devDependencies:
+  '@types/lodash': 4.14.175
   '@types/node': 16.10.1
   '@vitejs/plugin-vue': 1.9.2_vite@2.5.10
   '@windicss/plugin-animations': 1.0.9
@@ -98,6 +100,10 @@ packages:
   /@trysound/sax/0.2.0:
     resolution: {integrity: sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==}
     engines: {node: '>=10.13.0'}
+    dev: true
+
+  /@types/lodash/4.14.175:
+    resolution: {integrity: sha512-XmdEOrKQ8a1Y/yxQFOMbC47G/V2VDO1GvMRnl4O75M4GW/abC5tnfzadQYkqEveqRM1dEJGFFegfPNA2vvx2iw==}
     dev: true
 
   /@types/node/16.10.1:

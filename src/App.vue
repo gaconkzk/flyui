@@ -33,7 +33,11 @@ const toggleDrawer = ref<boolean>(false)
   </section>
 </template>
 
-<style>
+<style lang="scss">
+:root {
+  --f-primary: theme('colors.prim.1');
+}
+
 html {
   @apply text-gray-100 text-base;
 }
@@ -41,7 +45,7 @@ body {
   position: relative;
 }
 #app {
-  @apply font-sans antialiased text-center bg-blue-500 h-screen w-screen pt-60px;
+  @apply font-sans antialiased text-center bg-$f-primary h-screen w-screen pt-60px;
   h1,
   h2,
   h3,
