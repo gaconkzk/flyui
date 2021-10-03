@@ -32,3 +32,9 @@ app.mount('#app')
 ```
 
 Note you might need windicss and plugin-windicss-animation for better css control in your project (animation not worked when you don't have them)
+
+#### Flies icons license
+
+```html
+<div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+```

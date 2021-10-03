@@ -1,11 +1,15 @@
 import FButton from '@/components/FButton'
 import FDrawer from '@/components/FDrawer'
+// direct components
+import FSvgIcon from '@/components/FSvgIcon.vue'
 
 const components = {
   FButton,
   FDrawer,
+  FSvgIcon,
 }
 
+import 'virtual:svg-icons-register'
 import 'virtual:windi.css'
 // import './styles/index.scss'
 import { App } from 'vue'
@@ -26,4 +30,4 @@ function install(Vue: App) {
   // } as IEqual
 }
 
-export default { install, FButton, FDrawer }
+export default { install, FButton, FDrawer, FSvgIcon }
