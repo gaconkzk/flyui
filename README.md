@@ -62,6 +62,21 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/CS2909"><img src="https://avatars.githubusercontent.com/u/34714953?v=4&s=100" width="100px;" alt=""/><br /><sub><b>YeuChesen</b></sub></a><br /><a href="#question-yeuchensen" title="Answering Questions">💬</a> <a href="https://github.com/all-contributors/all-contributors/commits?author=cs2909" title="Documentation">📖</a> <a href="https://github.com/all-contributors/all-contributors/pulls?q=is%3Apr+reviewed-by%3Acs2909" title="Reviewed Pull Requests">👀</a> <a href="#talk-cs2909" title="Talks">📢</a></td>
+    <td align="center">
+      <a href="https://github.com/CS2909">
+        <img src="https://avatars.githubusercontent.com/u/34714953?v=4&s=100" width="100px;" alt=""/>
+        <br />
+        <sub><b>YeuChesen</b></sub>
+      </a>
+      <br />
+      <a href="#question-yeuchensen" title="Answering Questions">💬</a>
+      <a href="https://github.com/all-contributors/all-contributors/commits?author=cs2909" title="Documentation">📖</a>
+      <a href="https://github.com/all-contributors/all-contributors/pulls?q=is%3Apr+reviewed-by%3Acs2909" title="Reviewed Pull Requests">👀</a>
+      <a href="#" title="Talks">📢</a>
+      <a href="#" title="Code">💻</a>
+      <a href="#" title="Review Pull Requests">👀</a>
+      <a href="#" title="Design">🎨</a>
+      <a href="#" title="Ideas, Planning & Feedbacks">🤔</a>
+    </td>
   </tr>
 </table>
