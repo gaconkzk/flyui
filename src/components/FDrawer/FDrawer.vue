@@ -146,7 +146,7 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .drawer {
-  @apply nm-flat-blue-500;
+  @apply nm-flat-$f-primary;
   --xyz-in-duration: 0.8s;
   --xyz-out-duration: 0.8s;
 
@@ -154,7 +154,7 @@ export default defineComponent({
 }
 
 .overlay-drawer {
-  @apply fixed inset-0 opacity-30 bg-gray-400;
+  @apply fixed inset-0 opacity-80 bg-$f-primary;
 
   z-index: 99;
 }

@@ -60,7 +60,7 @@ const invalid = (color) => {
 }
 
 export default plugin(
-  function ({ addUtilities, e, theme, variants }) {
+  function ({ addUtilities, addDynamic, e, theme, variants }) {
     const nmFlatPairs = []
     _.forEach(
       flattenColorPalette(theme('neumorphismColor', theme('backgroundColor'))),
@@ -94,6 +94,21 @@ export default plugin(
       _.fromPairs(nmFlatPairs),
       variants('neumorphismFlat', ['responsive', 'hover', 'focus']),
     )
+
+    addDynamic('nm-flat', ({ Utility, Style }) => {
+      const prop = Utility.handler.handleVariable((v) => v).value
+      const propBase = `var(--${prop})`
+      const propLighter = `var(--${prop}-lighter)`
+      const propShadow = `var(--${prop}-shadow)`
+      const propHighlight = `var(--${prop}-highlight)`
+      if (!prop) return
+
+      return Style.generate(Utility.class, {
+        border: `1px solid ${propLighter}`,
+        background: propBase,
+        boxShadow: `0.2em 0.2em calc(0.2em * 2) ${propShadow}, calc(-0.2em) calc(-0.2em) calc(0.2em * 2) ${propHighlight}`,
+      })
+    })
 
     const nmConcavePairs = []
     _.forEach(
@@ -129,6 +144,20 @@ export default plugin(
       variants('neumorphismConcave', ['responsive', 'hover', 'focus']),
     )
 
+    addDynamic('nm-concave', ({ Utility, Style }) => {
+      const prop = Utility.handler.handleVariable((v) => v).value
+      const propLighter = `var(--${prop}-lighter)`
+      const propShadow = `var(--${prop}-shadow)`
+      const propHighlight = `var(--${prop}-highlight)`
+      if (!prop) return
+
+      return Style.generate(Utility.class, {
+        border: `1px solid ${propLighter}`,
+        background: `linear-gradient(145deg, ${propShadow}, ${propHighlight})`,
+        boxShadow: `0.2em 0.2em calc(0.2em * 2) ${propShadow}, calc(-0.2em) calc(-0.2em) calc(0.2em * 2) ${propHighlight}`,
+      })
+    })
+
     const nmConvexPairs = []
     _.forEach(
       flattenColorPalette(theme('neumorphismColor', theme('backgroundColor'))),
@@ -163,6 +192,20 @@ export default plugin(
       variants('neumorphismConvex', ['responsive', 'hover', 'focus']),
     )
 
+    addDynamic('nm-convex', ({ Utility, Style }) => {
+      const prop = Utility.handler.handleVariable((v) => v).value
+      const propLighter = `var(--${prop}-lighter)`
+      const propShadow = `var(--${prop}-shadow)`
+      const propHighlight = `var(--${prop}-highlight)`
+      if (!prop) return
+
+      return Style.generate(Utility.class, {
+        border: `1px solid ${propLighter}`,
+        background: `linear-gradient(145deg, ${propHighlight}, ${propShadow})`,
+        boxShadow: `0.2em 0.2em calc(0.2em * 2) ${propShadow}, calc(-0.2em) calc(-0.2em) calc(0.2em * 2) ${propHighlight}`,
+      })
+    })
+
     const nmInsetPairs = []
     _.forEach(
       flattenColorPalette(theme('neumorphismColor', theme('backgroundColor'))),
@@ -196,6 +239,21 @@ export default plugin(
       _.fromPairs(nmInsetPairs),
       variants('neumorphismInset', ['responsive', 'hover', 'focus']),
     )
+
+    addDynamic('nm-inset', ({ Utility, Style }) => {
+      const prop = Utility.handler.handleVariable((v) => v).value
+      const propBase = `var(--${prop})`
+      const propLighter = `var(--${prop}-lighter)`
+      const propShadow = `var(--${prop}-shadow)`
+      const propHighlight = `var(--${prop}-highlight)`
+      if (!prop) return
+
+      return Style.generate(Utility.class, {
+        border: `1px solid ${propLighter}`,
+        background: propBase,
+        boxShadow: `inset 0.2em 0.2em calc(0.2em * 2) ${propShadow}, inset calc(-0.2em) calc(-0.2em) calc(0.2em * 2) ${propHighlight}`,
+      })
+    })
   },
   {
     theme: {

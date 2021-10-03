@@ -93,18 +93,18 @@ export default defineComponent({
   @apply text-white opacity-80 rounded-lg inline-block text-center select-none py-1 px-4;
 
   &.flat {
-    @apply nm-flat-blue-500;
+    @apply nm-flat-$f-primary;
     &.activated,
     &:active {
-      @apply nm-inset-blue-500;
+      @apply nm-inset-$f-primary;
     }
   }
 
   &.convex {
-    @apply nm-convex-blue-500;
+    @apply nm-convex-$f-primary;
     &.activated,
     &:active {
-      @apply nm-concave-blue-500;
+      @apply nm-concave-$f-primary;
     }
   }
 
