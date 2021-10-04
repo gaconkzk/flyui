@@ -74,7 +74,6 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <a href="https://github.com/all-contributors/all-contributors/pulls?q=is%3Apr+reviewed-by%3Acs2909" title="Reviewed Pull Requests">👀</a>
       <a href="#" title="Talks">📢</a>
       <a href="#" title="Code">💻</a>
-      <a href="#" title="Review Pull Requests">👀</a>
       <a href="#" title="Design">🎨</a>
       <a href="#" title="Ideas, Planning & Feedbacks">🤔</a>
     </td>
