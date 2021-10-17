@@ -1,15 +1,15 @@
 {
   "name": "@gaconkzk/flyui",
-  "version": "0.2.0-alpha-1",
+  "version": "0.2.0-alpha-2",
   "files": [
     "dist",
     "@types"
   ],
   "main": "./dist/flyui.umd.js",
-  "module": "./dist/flyui.es.js",
+  "module": "./dist/flyui.esm.js",
   "exports": {
     ".": {
-      "import": "./dist/flyui.es.js",
+      "import": "./dist/flyui.esm.js",
       "require": "./dist/flyui.umd.js"
     },
     "./css": {
