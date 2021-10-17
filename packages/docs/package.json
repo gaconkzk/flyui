@@ -1,13 +1,13 @@
 {
   "name": "flyui-playground",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "scripts": {
     "dev": "vite --host",
     "build": "vue-tsc --noEmit && vite build",
     "serve": "vite preview"
   },
   "dependencies": {
-    "@gaconkzk/flyui": "^0.2.0-alpha-6",
+    "@gaconkzk/flyui": "workspace:*",
     "color": "^4.0.1",
     "vue": "^3.2.20"
   },
