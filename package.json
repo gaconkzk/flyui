@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "pnpm run dev --filter=\"@gaconkzk/flyui\"",
     "dev:docs": "pnpm run dev --filter=\"flyui-playground\"",
-    "build": "pnpm build --filter=\"@gaconkzk/flyui\" --filter=\"flyui-playground\""
+    "build": "pnpm build --filter=\"@gaconkzk/flyui\" --filter=\"flyui-playground\"",
+    "publish": "pnpm publish --access=public --filter=\"@gaconkzk/flyui\""
   },
   "repository": {
     "type": "git",
