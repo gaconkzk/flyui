@@ -1,8 +1,8 @@
 import { VueSvgIconPlugin } from '@yzfe/vue3-svgicon'
 
-import FButton from '@/components/FButton/index.vue'
-import FDrawer from '@/components/FDrawer/index.vue'
-import FIcon from '@/components/FIcon/index.vue'
+import FButton from '@/components/FButton/FButton.vue'
+import FDrawer from '@/components/FDrawer/FDrawer.vue'
+import FIcon from '@/components/FIcon/FIcon.vue'
 
 const components = {
   FButton,
@@ -37,5 +37,7 @@ export default {
 
 // For named components usage
 export { theme, updateTheme, defaultTheme } from './utils/theme'
-export { FButton, FDrawer, FIcon }
+export { default as FButton } from '@/components/FButton/index'
+export { default as FDrawer } from '@/components/FDrawer/index'
+export { default as FIcon } from '@/components/FIcon/index'
 // -- end

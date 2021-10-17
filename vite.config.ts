@@ -25,6 +25,7 @@ export default defineConfig({
           globals: {
             vue: 'Vue',
           },
+          exports: 'named',
         },
         // This umd config not tested and must be put after esm - when put before - the code splitting not work anymore
         {
@@ -37,6 +38,7 @@ export default defineConfig({
           },
           // For dynamic import code (svg icons for now)
           inlineDynamicImports: true,
+          exports: 'named',
         },
       ],
     },
