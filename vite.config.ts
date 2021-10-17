@@ -18,15 +18,30 @@ export default defineConfig({
       // make sure to externalize deps that shouldn't be bundled
       // into your library
       external: ['vue'],
-      output: {
-        // Provide global variables to use in the UMD build
-        // for externalized deps
-        globals: {
-          vue: 'Vue',
+      output: [
+        {
+          format: 'esm',
+          esModule: true,
+          globals: {
+            vue: 'Vue',
+          },
         },
-      },
+        // This umd config not tested and must be put after esm - when put before - the code splitting not work anymore
+        {
+          format: 'umd',
+          interop: 'esModule',
+          // Provide global variables to use in the UMD build
+          // for externalized deps
+          globals: {
+            vue: 'Vue',
+          },
+          // For dynamic import code (svg icons for now)
+          inlineDynamicImports: true,
+        },
+      ],
     },
   },
+  assetsInclude: ['**/*.svg'],
   resolve: {
     alias: [
       {

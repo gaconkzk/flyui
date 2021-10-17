@@ -3,7 +3,7 @@ const icons: { [key: string]: Promise<typeof import('*.svg')> } = {
   fly_filled: import('@/assets/icons/svg/fly_filled.svg'),
   fly_logo: import('@/assets/icons/svg/fly_logo.svg'),
   fly_outline: import('@/assets/icons/svg/fly_outline.svg'),
-  fly: import('@/assets/icons/fly.svg'),
+  fly: import('@/assets/icons/svg/fly.svg'),
   s_fly_filled: import('@/assets/icons/svg/s_fly_filled.svg'),
   s_fly: import('@/assets/icons/svg/s_fly.svg'),
 }
