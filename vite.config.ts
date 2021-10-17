@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import viteSvgIcons from 'vite-plugin-svg-icons'
+import svgicon from 'vite-plugin-svgicon'
 
 import WindiCSS from 'vite-plugin-windicss'
 import * as path from 'path'
@@ -36,13 +36,10 @@ export default defineConfig({
     ],
   },
   plugins: [
-    viteSvgIcons({
-      // Specify the icon folder to be cached
-      iconDirs: [path.resolve(process.cwd(), 'src/assets/icons')],
-      // Specify symbolId format
-      symbolId: 'icon-[name]',
-    }),
     vue(),
+    svgicon({
+      include: ['**/assets/icons/svg/**/*.svg'],
+    }),
     WindiCSS(),
     libInjectCss(),
   ],

@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-
 const toggleDrawer = ref<boolean>(false)
 </script>
 
@@ -26,9 +25,14 @@ const toggleDrawer = ref<boolean>(false)
   <section>
     <h5>Icons</h5>
     <div class="flex flex-row justify-center gap-4">
-      <f-svg-icon name="fly_logo" width="40px" height="40px" />
-      <f-svg-icon name="s_fly" width="40px" height="40px" />
-      <f-svg-icon name="fly_filled" width="40px" height="40px" />
+      <f-icon name="fly_logo" width="40px" height="40px" original />
+      <f-icon name="s_fly" width="40px" height="40px" original />
+      <f-icon
+        name="fly_filled"
+        width="40px"
+        height="40px"
+        class="!text-blue-500"
+      />
     </div>
   </section>
 </template>

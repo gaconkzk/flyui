@@ -1,6 +1,6 @@
 {
   "name": "@gaconkzk/flyui",
-  "version": "0.1.0-alpha-17",
+  "version": "0.2.0-alpha-1",
   "files": [
     "dist",
     "@types"
@@ -28,19 +28,22 @@
   "dependencies": {
     "color": "^4.0.1",
     "lodash": "^4.17.21",
-    "vue": "^3.2.13"
+    "vue": "^3.2.20"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.175",
-    "@types/node": "^16.10.1",
-    "@vitejs/plugin-vue": "^1.9.0",
+    "@types/node": "^16.11.0",
+    "@vitejs/plugin-vue": "^1.9.3",
     "@windicss/plugin-animations": "^1.0.9",
-    "sass": "^1.42.1",
-    "typescript": "^4.4.3",
-    "vite": "^2.5.10",
+    "@yzfe/svgicon": "^1.1.0",
+    "@yzfe/vue3-svgicon": "^1.0.1",
+    "sass": "^1.43.2",
+    "typescript": "^4.4.4",
+    "vite": "^2.6.7",
     "vite-plugin-svg-icons": "^1.0.5",
-    "vite-plugin-windicss": "^1.4.7",
-    "vue-tsc": "^0.3.0",
-    "windicss": "^3.1.7"
+    "vite-plugin-svgicon": "^1.0.0",
+    "vite-plugin-windicss": "^1.4.11",
+    "vue-tsc": "^0.28.6",
+    "windicss": "^3.1.9"
   }
 }
