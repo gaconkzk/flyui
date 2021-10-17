@@ -26,9 +26,9 @@ const FIcon = defineComponent({
   },
 })
 
-FIcon.install = (Vue: App) => {
-  Vue.component(FIcon.name, FIcon)
-}
-
 export default FIcon
 </script>
+
+<style lang="scss">
+@import '@yzfe/svgicon/lib/svgicon.css';
+</style>

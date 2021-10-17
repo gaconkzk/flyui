@@ -1,7 +1,7 @@
 import { VueSvgIconPlugin } from '@yzfe/vue3-svgicon'
 
-import FButton from '@/components/FButton'
-import FDrawer from '@/components/FDrawer'
+import FButton from '@/components/FButton/index.vue'
+import FDrawer from '@/components/FDrawer/index.vue'
 import FIcon from '@/components/FIcon/index.vue'
 
 const components = {
@@ -23,13 +23,19 @@ function install(Vue: App) {
   }
 
   Vue.use(VueSvgIconPlugin, { tagName: 'svg-icon' })
-  // Vue.config.globalProperties.$Message = Message
-  // Vue.config.globalProperties.$Notification = Notification
-  // Vue.config.globalProperties.$Loading = Loadingbar
-  // Vue.config.globalProperties.$Equal = {
-  //   drawers: [],
-  //   modals: [],
-  // } as IEqual
 }
 
-export default { install, FButton, FDrawer, FIcon }
+Object.values(components).forEach(
+  (component) =>
+    (component.install = (Vue: App) =>
+      Vue.component(component.name, component)),
+)
+
+export default {
+  install,
+}
+
+// For named components usage
+export { theme, updateTheme, defaultTheme } from './utils/theme'
+export { FButton, FDrawer, FIcon }
+// -- end

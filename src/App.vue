@@ -1,9 +1,14 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import FThemeColor from './FThemeColor.vue'
 const toggleDrawer = ref<boolean>(false)
 </script>
 
 <template>
+  <section>
+    <h5>Theme</h5>
+    <f-theme-color />
+  </section>
   <section>
     <h5>Buttons</h5>
     <f-button>Primary</f-button>
