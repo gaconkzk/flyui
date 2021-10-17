@@ -18,12 +18,14 @@ importers:
       vite: ^2.6.7
       vite-plugin-windicss: ^1.4.11
       vue: ^3.2.20
+      vue-router: ^4.0.12
       vue-tsc: ^0.3.0
       windicss: ^3.1.9
     dependencies:
       '@gaconkzk/flyui': link:../flyui
       color: 4.0.1
       vue: 3.2.20
+      vue-router: 4.0.12_vue@3.2.20
     devDependencies:
       '@types/color': 3.0.2
       '@types/node': 16.11.1
@@ -315,6 +317,10 @@ packages:
     dependencies:
       '@vue/compiler-dom': 3.2.20
       '@vue/shared': 3.2.20
+    dev: false
+
+  /@vue/devtools-api/6.0.0-beta.19:
+    resolution: {integrity: sha512-ObzQhgkoVeoyKv+e8+tB/jQBL2smtk/NmC9OmFK8UqdDpoOdv/Kf9pyDWL+IFyM7qLD2C75rszJujvGSPSpGlw==}
     dev: false
 
   /@vue/reactivity/3.2.20:
@@ -2794,6 +2800,15 @@ packages:
       vscode-pug-languageservice: 0.28.6
       vscode-typescript-languageservice: 0.28.6
     dev: true
+
+  /vue-router/4.0.12_vue@3.2.20:
+    resolution: {integrity: sha512-CPXvfqe+mZLB1kBWssssTiWg4EQERyqJZes7USiqfW9B5N2x+nHlnsM1D3b5CaJ6qgCvMmYJnz+G0iWjNCvXrg==}
+    peerDependencies:
+      vue: ^3.0.0
+    dependencies:
+      '@vue/devtools-api': 6.0.0-beta.19
+      vue: 3.2.20
+    dev: false
 
   /vue-tsc/0.28.6_typescript@4.4.4:
     resolution: {integrity: sha512-S0CpSlDD8Y54GAidg0T+1xCiv8uLZCaXQgL+dfp7NlB+1IWftZ3gwr59e/yjMZx41GZet/wlWHTRxNIO0on22A==}
