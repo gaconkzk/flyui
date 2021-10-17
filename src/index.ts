@@ -1,3 +1,5 @@
+import { VueSvgIconPlugin } from '@yzfe/vue3-svgicon'
+
 import FButton from '@/components/FButton'
 import FDrawer from '@/components/FDrawer'
 import FIcon from '@/components/FIcon/index.vue'
@@ -11,9 +13,6 @@ const components = {
 import 'virtual:windi.css'
 import './styles/index.scss'
 import { App } from 'vue'
-
-import { VueSvgIconPlugin } from '@yzfe/vue3-svgicon'
-import '@yzfe/svgicon/lib/svgicon.css'
 
 // Use full install all declared components
 function install(Vue: App) {
