@@ -46,7 +46,7 @@ export const updateTheme = (primaryColor: string) => {
     )
     document.documentElement.style.setProperty(
       '--t-primary',
-      Color(primaryColor).negate().hex(),
+      Color(primaryColor).negate().grayscale().hex(),
     )
   }
 }
