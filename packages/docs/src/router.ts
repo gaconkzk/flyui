@@ -15,7 +15,7 @@ const routes = [
 ]
 
 export const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory('flyui'),
   routes,
   scrollBehavior() {
     return { left: 0, top: 0 }
