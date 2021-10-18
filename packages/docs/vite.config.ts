@@ -4,5 +4,14 @@ import WindiCSS from 'vite-plugin-windicss'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue(), WindiCSS()]
+  build: {
+    outDir: '../../docs',
+    rollupOptions: {
+      output: {
+        inlineDynamicImports: true,
+        manualChunks: null,
+      },
+    },
+  },
+  plugins: [vue(), WindiCSS()],
 })

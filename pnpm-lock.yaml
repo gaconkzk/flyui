@@ -45,6 +45,7 @@ importers:
       '@types/node': ^16.11.0
       '@vitejs/plugin-vue': ^1.9.3
       '@windicss/plugin-animations': ^1.0.9
+      '@windicss/plugin-scrollbar': ^1.2.3
       '@yzfe/svgicon': ^1.1.0
       '@yzfe/vue3-svgicon': ^1.0.1
       color: ^4.0.1
@@ -59,6 +60,7 @@ importers:
       vue-tsc: ^0.28.6
       windicss: ^3.1.9
     dependencies:
+      '@windicss/plugin-scrollbar': 1.2.3
       color: 4.0.1
       lodash: 4.17.21
       vue: 3.2.20
@@ -379,6 +381,10 @@ packages:
   /@windicss/plugin-animations/1.0.9:
     resolution: {integrity: sha512-9WsQsPzLurkwV5zaMCwmylxfSHlQ1pPmzud4ysvMkMBRB7obub9ESmqlHefcCjEhatz/ZROi1U1XOuOPPUO1nA==}
     dev: true
+
+  /@windicss/plugin-scrollbar/1.2.3:
+    resolution: {integrity: sha512-+cqv1pEmaNPITeBJ/lO6tc8IjBzRhQ+V9G8r249MMXivYoxUO4DtModBrRGHVvBgsYZgPXDsIv2jqtxc4NqYEg==}
+    dev: false
 
   /@windicss/plugin-utils/1.4.11:
     resolution: {integrity: sha512-lMxHnMCSFS8Cbae4lftYVLHJJoQ0ytVQQ4d71QhRYWjz1e8Axr/pJKxDgrlOUYb9B7LJ74/3ggMjCK5/X8Hiaw==}

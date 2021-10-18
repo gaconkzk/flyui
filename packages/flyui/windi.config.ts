@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite-plugin-windicss'
 import animations from '@windicss/plugin-animations'
+import scrollbar from '@windicss/plugin-scrollbar'
 
 import neumorphism from './tailwindcss-neumorphism'
 import { theme } from './src/utils/theme'
@@ -21,6 +22,7 @@ module.exports = defineConfig({
   },
   plugins: [
     neumorphism,
+    // scrollbar,
     animations({
       settings: {
         animatedSpeed: 1000,
