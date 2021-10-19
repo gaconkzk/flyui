@@ -5,8 +5,9 @@
   "main": ".prettierrc.js",
   "scripts": {
     "dev": "pnpm run dev --filter=\"@gaconkzk/flyui\"",
-    "dev:docs": "pnpm run dev --filter=\"flyui-playground\"",
-    "build": "pnpm build --filter=\"@gaconkzk/flyui\" --filter=\"flyui-playground\"",
+    "dev:docs": "pnpm run build && pnpm run dev --filter=\"docs\"",
+    "build": "pnpm build --filter=\"@gaconkzk/flyui\"",
+    "build:docs": "pnpm build --filter=\"docs\"",
     "publish": "pnpm publish --access=public --filter=\"@gaconkzk/flyui\""
   },
   "repository": {

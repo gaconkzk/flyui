@@ -4,6 +4,6 @@
 
 <style lang="scss">
 #app {
-  @apply mx-auto flex flex-col items-center;
+  @apply mx-auto flex flex-col items-start lg:ml-64 pl-4;
 }
 </style>

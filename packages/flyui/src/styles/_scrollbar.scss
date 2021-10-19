@@ -1,0 +1,27 @@
+.scrollbar-thin {
+  scrollbar-color: var(--f-scrollbar-thumb) var(--f-scrollbar-track);
+  overflow: overlay;
+  ::-webkit-scrollbar {
+    width: thin;
+  }
+  --scrollbar-track: var(--f-primary);
+  -webkit-scrollbar-track {
+    background: var(--f-primary);
+  }
+  &::-webkit-scrollbar-thumb {
+    background: var(--f-scrollbar-thumb);
+    border-radius: var(--f-scrollbar-radius);
+  }
+}
+.scrollbar {
+  scrollbar-color: var(--f-scrollbar-thumb) var(--f-scrollbar-track);
+  overflow: overlay;
+  scrollbar-track-color: var(--f-scrollbar-track);
+  &::-webkit-scrollbar-track {
+    background: var(--f-scrollbar-track);
+  }
+  &::-webkit-scrollbar-thumb {
+    background: var(--f-scrollbar-thumb);
+    border-radius: var(--f-scrollbar-radius);
+  }
+}

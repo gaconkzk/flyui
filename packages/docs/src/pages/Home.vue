@@ -1,12 +1,9 @@
+<script setup lang="ts">
+import Sidebar from '../components/SideBar.vue'
+</script>
 <template>
+  <sidebar />
   <div class="page">
     <router-view />
   </div>
 </template>
-
-<script lang="ts">
-import { defineComponent } from 'vue'
-export default defineComponent({
-  name: 'home',
-})
-</script>
