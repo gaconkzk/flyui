@@ -1,16 +1,16 @@
 {
-  "name": "@flyui/vue3",
+  "name": "@theflies/flyui-vue3",
   "version": "0.2.1-alpha-3",
   "files": [
     "dist",
     "@types"
   ],
-  "main": "./dist/vue3.umd.js",
-  "module": "./dist/vue3.esm.js",
+  "main": "./dist/flyui-flyui-vue3.umd.js",
+  "module": "./dist/flyui-vue3.esm.js",
   "exports": {
     ".": {
-      "import": "./dist/vue3.esm.js",
-      "require": "./dist/vue3.umd.js"
+      "import": "./dist/flyui-vue3.esm.js",
+      "require": "./dist/flyui-vue3.umd.js"
     },
     "./css": {
       "import": "./dist/style.css",

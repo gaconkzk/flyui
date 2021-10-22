@@ -1,1 +1,1 @@
-declare module '@flyui/vue3'
+declare module '@theflies/flyui-vue3'

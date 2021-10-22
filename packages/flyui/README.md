@@ -7,12 +7,12 @@ Trying to make my own component framework.
 - @windicss/plugin-animations
 
 ## Typescript missing
-- for now please add ```declare module '@flyui/vue3'``` into your typescripton definition file
+- for now please add ```declare module '@theflies/flyui-vue3'``` into your typescripton definition file
 
 ## installation
 
 ```
-pnpm add @flyui/vue3
+pnpm add @theflies/flyui-vue3
 ```
 
 Use in your main app:
@@ -21,8 +21,8 @@ Use in your main app:
 import { createApp } from 'vue'
 import App from './App.vue'
 
-import Flyui from '@flyui/vue3'
-import '@flyui/vue3/css'
+import Flyui from '@theflies/flyui-vue3'
+import '@theflies/flyui-vue3/css'
 
 
 const app = createApp(App)
