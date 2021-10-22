@@ -5,7 +5,11 @@ import { onClickOutside } from '@vueuse/core'
 const sidebar = ref(null)
 const display = ref(false)
 
-onClickOutside(sidebar, () => toggle())
+onClickOutside(sidebar, () => {
+  if (display.value) {
+    toggle()
+  }
+})
 
 function toggle() {
   display.value = !display.value
