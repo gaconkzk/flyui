@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@gaconkzk/flyui": "workspace:*",
+    "@vueuse/core": "^6.7.3",
     "color": "^4.0.1",
     "vue": "^3.2.20",
     "vue-router": "^4.0.12"

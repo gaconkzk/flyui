@@ -1,22 +1,47 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { ref } from 'vue'
+import { onClickOutside } from '@vueuse/core'
+
+const sidebar = ref(null)
+const display = ref(false)
+
+onClickOutside(sidebar, () => toggle())
+
+function toggle() {
+  display.value = !display.value
+}
+</script>
 
 <template>
-  <div class="sidebar flat" v-scrollable>
+  <div
+    :class="`sidebar flat${display ? ' display' : ''}`"
+    v-scrollable
+    ref="sidebar"
+  >
     <slot />
   </div>
-  <button class="halfshow fixed left-60 top-4 rounded-full w-8 h-8 pb-1">
+  <button :class="`halfshow${display ? ' display' : ''}`" @click="toggle">
     X
   </button>
 </template>
 
 <style lang="scss">
 .sidebar {
-  @apply fixed lg:left-0 h-screen w-64 z-1 lg:z-0 -left-64;
+  @apply fixed lg:(z-0 transition-transform transform translate-x-64) h-screen w-64 z-1 -left-64 transition-transform transform translate-x-0;
+  &.display {
+    @apply transition-transform transform translate-x-64;
+  }
 }
 
 .halfshow {
+  @apply outline-none fixed -left-4 top-4 rounded-full w-8 h-8 pb-1 lg:(hidden);
+
+  &:focus {
+    @apply outline-none;
+  }
+
   &::before {
-    @apply -z-1 rounded-full;
+    @apply -z-1 rounded-full  outline-none;
     position: absolute;
     top: 0;
     left: 0;
@@ -30,15 +55,17 @@
       calc(-0.2em) calc(-0.2em) calc(0.2em * 2) var(--f-primary-highlight);
   }
   &::after {
-    @apply -z-1;
+    @apply -z-1 outline-none w-5 h-10;
     position: absolute;
     top: -0.5rem;
     left: -0.5rem;
     display: inline-block;
     content: '';
-    width: 1.47rem;
-    height: 3rem;
     background: var(--f-primary);
+  }
+
+  &.display {
+    @apply z-1 transition-transform transform translate-x-64;
   }
 }
 </style>
