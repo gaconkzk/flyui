@@ -5,7 +5,7 @@
     "dist",
     "@types"
   ],
-  "main": "./dist/flyui-flyui-vue3.umd.js",
+  "main": "./dist/flyui-vue3.umd.js",
   "module": "./dist/flyui-vue3.esm.js",
   "exports": {
     ".": {
