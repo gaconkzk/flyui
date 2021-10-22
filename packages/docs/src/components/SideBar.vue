@@ -3,10 +3,11 @@ import { ref } from 'vue'
 import { onClickOutside } from '@vueuse/core'
 
 const sidebar = ref(null)
+const toggleButton = ref(null)
 const display = ref(false)
 
-onClickOutside(sidebar, () => {
-  if (display.value) {
+onClickOutside(sidebar, (e) => {
+  if (display.value && e.target !== toggleButton.value) {
     toggle()
   }
 })
@@ -24,7 +25,11 @@ function toggle() {
   >
     <slot />
   </div>
-  <button :class="`halfshow${display ? ' display' : ''}`" @click="toggle">
+  <button
+    :class="`halfshow${display ? ' display' : ''}`"
+    @click="toggle"
+    ref="toggleButton"
+  >
     X
   </button>
 </template>

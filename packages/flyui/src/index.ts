@@ -27,25 +27,13 @@ function install(Vue: App) {
   // scrollable
   Vue.directive('scrollable', {
     beforeMount(el, binding, vnode) {
-      // el.style.add('--f-scroll-track': '')
       el.classList.add('overflow-y-auto')
       if (binding?.value?.thin) {
         el.classList.add(`scrollbar-thin`)
       } else el.classList.add(`scrollbar`)
-      // if (binding?.value?.scrollClasses) {
-      //   binding?.value?.scrollClasses.forEach((c: string) =>
-      //     el.classList.add(c),
-      //   )
-      // }
     },
   })
 }
-
-Object.values(components).forEach(
-  (component) =>
-    (component.install = (Vue: App) =>
-      Vue.component(component.name, component)),
-)
 
 export default {
   install,
