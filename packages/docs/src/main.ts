@@ -5,8 +5,8 @@ import App from './App.vue'
 import 'virtual:windi.css'
 import './styles/index.scss'
 
-import Flyui from '@theflies/flyui-vue3'
-import '@theflies/flyui-vue3/css'
+import Flyui from '@gaconkzk/flyui-vue3'
+import '@gaconkzk/flyui-vue3/css'
 
 const app = createApp(App)
 

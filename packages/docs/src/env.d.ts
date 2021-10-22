@@ -1,5 +1,5 @@
 /// <reference types="vite/client" />
-declare module '@theflies/flyui-vue3'
+declare module '@gaconkzk/flyui-vue3'
 
 declare module '*.vue' {
   import { DefineComponent } from 'vue'

@@ -7,7 +7,7 @@ importers:
 
   packages/docs:
     specifiers:
-      '@theflies/flyui-vue3': workspace:*
+      '@gaconkzk/flyui-vue3': workspace:*
       '@types/color': ^3.0.2
       '@types/node': ^16.11.1
       '@vitejs/plugin-vue': ^1.9.3
@@ -23,7 +23,7 @@ importers:
       vue-tsc: ^0.3.0
       windicss: ^3.1.9
     dependencies:
-      '@theflies/flyui-vue3': link:../flyui
+      '@gaconkzk/flyui-vue3': link:../flyui
       '@vueuse/core': 6.7.3_vue@3.2.20
       color: 4.0.1
       vue: 3.2.20

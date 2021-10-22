@@ -4,7 +4,7 @@
 
 <script lang="ts">
 import { watch, defineComponent, inject, ref, Ref } from 'vue'
-import { theme, updateTheme } from '@theflies/flyui-vue3'
+import { theme, updateTheme } from '@gaconkzk/flyui-vue3'
 
 export default defineComponent({
   name: 'FThemeColor',
