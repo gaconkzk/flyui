@@ -4,11 +4,11 @@
   "description": "",
   "main": ".prettierrc.js",
   "scripts": {
-    "dev": "pnpm run dev --filter=\"@gaconkzk/flyui\"",
+    "dev": "pnpm run dev --filter=\"@flyui/vue3\"",
     "dev:docs": "pnpm run build && pnpm run dev --filter=\"docs\"",
-    "build": "pnpm build --filter=\"@gaconkzk/flyui\"",
+    "build": "pnpm build --filter=\"@flyui/vue3\"",
     "build:docs": "pnpm build --filter=\"docs\"",
-    "publish": "pnpm publish --access=public --filter=\"@gaconkzk/flyui\""
+    "publish": "pnpm publish --access=public --filter=\"@flyui/vue3\""
   },
   "repository": {
     "type": "git",

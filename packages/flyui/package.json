@@ -5,12 +5,12 @@
     "dist",
     "@types"
   ],
-  "main": "./dist/flyui.umd.js",
-  "module": "./dist/flyui.esm.js",
+  "main": "./dist/vue3.umd.js",
+  "module": "./dist/vue3.esm.js",
   "exports": {
     ".": {
-      "import": "./dist/flyui.esm.js",
-      "require": "./dist/flyui.umd.js"
+      "import": "./dist/vue3.esm.js",
+      "require": "./dist/vue3.umd.js"
     },
     "./css": {
       "import": "./dist/style.css",

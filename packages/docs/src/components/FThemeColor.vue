@@ -1,10 +1,10 @@
 <template>
-  <input type="color" :value="themeColor" class="test" @input="handleInput"/>
+  <input type="color" :value="themeColor" class="test" @input="handleInput" />
 </template>
 
 <script lang="ts">
 import { watch, defineComponent, inject, ref, Ref } from 'vue'
-import { theme, updateTheme } from '@gaconkzk/flyui'
+import { theme, updateTheme } from '@flyui/vue3'
 
 export default defineComponent({
   name: 'FThemeColor',
@@ -15,15 +15,18 @@ export default defineComponent({
       themeColor.value = e.target.value
     }
 
-    watch(() => themeColor.value, (v) => {
-      updateTheme(v)
-    })
+    watch(
+      () => themeColor.value,
+      (v) => {
+        updateTheme(v)
+      },
+    )
 
     return {
       themeColor,
       handleInput,
     }
-  }
+  },
 })
 </script>
 

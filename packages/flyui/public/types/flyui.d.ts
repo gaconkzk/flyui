@@ -1,1 +1,1 @@
-declare module '@gaconkzk/flyui';
+declare module '@flyui/vue3'
