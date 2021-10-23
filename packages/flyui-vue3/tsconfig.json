@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "rootDir": "./",
     "target": "esnext",
     "useDefineForClassFields": true,
     "module": "esnext",
@@ -11,6 +12,7 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "lib": ["esnext", "dom"],
+    "types": ["@gaconkzk/core", "vue"],
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]

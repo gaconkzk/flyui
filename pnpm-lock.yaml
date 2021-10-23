@@ -7,8 +7,10 @@ importers:
 
   packages/core:
     specifiers:
+      color: ^4.0.1
       windicss: ^3.1.9
     dependencies:
+      color: 4.0.1
       windicss: 3.1.9
 
   packages/docs:
