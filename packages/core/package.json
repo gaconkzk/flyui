@@ -1,0 +1,28 @@
+{
+  "name": "@gaconkzk/core",
+  "version": "1.0.0",
+  "description": "",
+  "typings": "core.d.ts",
+  "files": [
+    "utils",
+    "tailwindcss-neumorphism.ts"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "exports": {
+    "./theme": {
+      "import": "./utils/theme.ts",
+      "require": "./utils/theme.ts"
+    },
+    "./tw-nm": {
+      "import": "./tailwindcss-neumorphism.ts",
+      "require": "./tailwindcss-neumorphism.ts"
+    }
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "windicss": "^3.1.9"
+  }
+}
