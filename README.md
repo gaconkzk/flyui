@@ -6,7 +6,7 @@ Trying to make my own component framework.
 
 ### build library
 ```
-pnpm run build
+pnpm run build:vue3
 ```
 
 ### build docs folder
@@ -17,12 +17,12 @@ Must run after **build library**
 pnpm run build:docs
 ```
 
-### run develop library (simple dev app)
+### run develop library (simple dev app - vue3 only)
 ```
 pnpm run dev
 ```
 
-### run develop docs (full playground)
+### run develop docs (full playground - vue 3 only)
 Must run after **build library** (if having library change)
 ```
 pnpm run dev:docs
