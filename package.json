@@ -6,9 +6,14 @@
   "scripts": {
     "dev": "pnpm run dev --filter=\"@gaconkzk/flyui-vue3\"",
     "dev:docs": "pnpm run build && pnpm run dev --filter=\"docs\"",
-    "build": "pnpm build --filter=\"@gaconkzk/flyui-vue3\"",
+    "build": "pnpm build --filter=\"@gaconkzk/flyui-vue3\" --filter=\"@gaconkzk/flyui-react\" --filter=\"@gaconkzk/flyui-svelte\"",
     "build:docs": "pnpm build --filter=\"docs\"",
-    "publish": "pnpm publish --access=public --filter=\"@gaconkzk/flyui-vue3\""
+    "build:vue3": "pnpm build --filter=\"@gaconkzk/flyui-vue3\"",
+    "build:react": "pnpm build --filter=\"@gaconkzk/flyui-react\"",
+    "build:svelte": "pnpm build --filter=\"@gaconkzk/flyui-svelte\"",
+    "publish:vue3": "pnpm publish --access=public --filter=\"@gaconkzk/flyui-vue3\"",
+    "publish:react": "pnpm publish --access=public --filter=\"@gaconkzk/flyui-react\"",
+    "publish:svelte": "pnpm publish --access=public --filter=\"@gaconkzk/flyui-svelte\""
   },
   "repository": {
     "type": "git",
