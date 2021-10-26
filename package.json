@@ -5,6 +5,8 @@
   "main": ".prettierrc.js",
   "scripts": {
     "dev": "pnpm run dev --filter=\"@gaconkzk/flyui-vue3\"",
+    "dev:svelte": "pnpm run dev --filter=\"@gaconkzk/flyui-svelte\"",
+    "dev:react": "pnpm run dev --filter=\"@gaconkzk/flyui-react\"",
     "dev:docs": "pnpm run build && pnpm run dev --filter=\"docs\"",
     "build": "pnpm build --filter=\"@gaconkzk/flyui-vue3\" --filter=\"@gaconkzk/flyui-react\" --filter=\"@gaconkzk/flyui-svelte\"",
     "build:docs": "pnpm build --filter=\"docs\"",

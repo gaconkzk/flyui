@@ -8,9 +8,11 @@ importers:
   packages/core:
     specifiers:
       color: ^4.0.1
+      vite: ^2.6.11
       windicss: ^3.1.9
-    dependencies:
+    devDependencies:
       color: 4.0.1
+      vite: 2.6.11
       windicss: 3.1.9
 
   packages/docs:
@@ -80,6 +82,7 @@ importers:
       '@gaconkzk/core': workspace:*
       '@sveltejs/vite-plugin-svelte': ^1.0.0-next.11
       '@tsconfig/svelte': ^2.0.1
+      '@types/node': ^16.11.6
       '@windicss/plugin-animations': ^1.0.9
       color: ^4.0.1
       lodash: ^4.17.21
@@ -89,12 +92,14 @@ importers:
       tslib: ^2.2.0
       typescript: ^4.3.2
       vite: ^2.6.4
+      vite-plugin-svgicon: ^1.0.0
       vite-plugin-windicss: ^1.4.11
       windicss: ^3.1.9
     devDependencies:
       '@gaconkzk/core': link:../core
       '@sveltejs/vite-plugin-svelte': 1.0.0-next.30_svelte@3.44.0+vite@2.6.7
       '@tsconfig/svelte': 2.0.1
+      '@types/node': 16.11.6
       '@windicss/plugin-animations': 1.0.9
       color: 4.0.1
       lodash: 4.17.21
@@ -104,6 +109,7 @@ importers:
       tslib: 2.3.1
       typescript: 4.4.4
       vite: 2.6.7
+      vite-plugin-svgicon: 1.0.0_vite@2.6.7
       vite-plugin-windicss: 1.4.11_vite@2.6.7
       windicss: 3.1.9
 
@@ -537,6 +543,10 @@ packages:
 
   /@types/node/16.11.1:
     resolution: {integrity: sha512-PYGcJHL9mwl1Ek3PLiYgyEKtwTMmkMw4vbiyz/ps3pfdRYLVv+SN7qHVAImrjdAXxgluDEw6Ph4lyv+m9UpRmA==}
+    dev: true
+
+  /@types/node/16.11.6:
+    resolution: {integrity: sha512-ua7PgUoeQFjmWPcoo9khiPum3Pd60k4/2ZGXt18sm2Slk0W0xZTqt5Y0Ny1NyBiN1EVQ/+FaF9NcY4Qe6rwk5w==}
     dev: true
 
   /@types/prop-types/15.7.4:
@@ -3386,7 +3396,7 @@ packages:
       '@types/svgo': 1.3.6
       '@yzfe/svgicon-gen': 1.1.0
       minimatch: 3.0.4
-      vite: 2.6.7_sass@1.43.2
+      vite: 2.6.7
     dev: true
 
   /vite-plugin-windicss/1.4.11_vite@2.6.7:
@@ -3401,6 +3411,30 @@ packages:
       windicss: 3.1.9
     transitivePeerDependencies:
       - supports-color
+    dev: true
+
+  /vite/2.6.11:
+    resolution: {integrity: sha512-JWnGmiO1IFwou9aUWS4N0kMyHcgTTt1+2f4bJyzgBJLJDyAqGEX3HewE4jgrL6V4d9+mxs+lZ4L8HL2kyVBe7A==}
+    engines: {node: '>=12.2.0'}
+    hasBin: true
+    peerDependencies:
+      less: '*'
+      sass: '*'
+      stylus: '*'
+    peerDependenciesMeta:
+      less:
+        optional: true
+      sass:
+        optional: true
+      stylus:
+        optional: true
+    dependencies:
+      esbuild: 0.13.8
+      postcss: 8.3.9
+      resolve: 1.20.0
+      rollup: 2.58.0
+    optionalDependencies:
+      fsevents: 2.3.2
     dev: true
 
   /vite/2.6.7:
@@ -3687,6 +3721,7 @@ packages:
     resolution: {integrity: sha512-5YoKvXeCQXIdwc91BoOgpKbIImr2JS8I14rPMa/5dKDDPA4ot3NgICWKELkml39R/8rn4Q0BVUUTqN+w+hjDSA==}
     engines: {node: '>= 12'}
     hasBin: true
+    dev: true
 
   /with/7.0.2:
     resolution: {integrity: sha512-RNGKj82nUPg3g5ygxkQl0R937xLyho1J24ItRCBTr/m1YnZkzJy1hUiHUJrc/VlsDQzsCnInEGSg3bci0Lmd4w==}
