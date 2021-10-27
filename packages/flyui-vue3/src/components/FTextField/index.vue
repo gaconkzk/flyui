@@ -150,11 +150,11 @@ export default defineComponent({
     @apply nm-inset-$f-primary border-$f-primary rounded-md h-10;
 
     &.append {
-      @apply rounded-br-none rounded-tr-none border-r-0;
+      @apply pr-8;
     }
 
     &.prepend {
-      @apply rounded-bl-none rounded-tl-none border-l-0;
+      @apply pl-8;
     }
   }
 
@@ -165,17 +165,18 @@ export default defineComponent({
   input[type='time'].invalid {
     @apply nm-inset-$f-primary border-red-500 rounded-md h-10 ring-0 ring-current outline-current outline-none;
 
+    &:hover:not(.disabled):not(:read-only),
+    &:focus:not(.disabled):not(:read-only) {
+      @apply outline-red-900;
+      outline: red solid 0.5px;
+      outline-offset: -0.5px;
+    }
     &.append {
-      @apply rounded-br-none rounded-tr-none border-r-0;
+      @apply pr-8;
     }
 
     &.prepend {
-      @apply rounded-bl-none rounded-tl-none border-l-0;
-    }
-    &:hover,
-    &:focus {
-      outline: red solid 0.5px;
-      outline-offset: -0.5px;
+      @apply pl-8;
     }
   }
 
@@ -194,14 +195,13 @@ export default defineComponent({
 
   .f-input-group {
     @apply flex w-full items-stretch;
-
     .f-input {
-      @apply nm-inset-$f-primary-sm border-$f-primary my-1 cursor-text rounded-md w-full px-2;
+      @apply relative nm-inset-$f-primary-sm border-$f-primary my-1 cursor-text rounded-md w-full px-2;
 
       &.disabled,
       &.disabled:focus,
       &.disabled:hover {
-        @apply bg-opacity-20 text-opacity-40 cursor-not-allowed;
+        @apply bg-opacity-20 text-opacity-40 cursor-not-allowed opacity-60;
       }
 
       &.invalid,
@@ -209,18 +209,10 @@ export default defineComponent({
       &.invalid:hover {
         @apply border-red-500 border-opacity-60;
       }
-
-      &.append {
-        @apply rounded-tr-none rounded-br-none border-r-0;
-      }
-
-      &.prepend {
-        @apply rounded-tl-none rounded-bl-none border-l-0;
-      }
     }
 
     .append-container {
-      @apply items-center flex my-1 py-2 px-1.5 border-l-0 border-r border-t border-b border-solid rounded-r-lg;
+      @apply absolute  z-50 nm-inset-$f-primary right-0 h-10 items-center flex my-1 py-2 px-1.5  border-l-0 border-r border-t border-b border-solid rounded-r-lg;
 
       &.invalid {
         @apply border-red-500 text-red-500 border-opacity-60;
@@ -232,7 +224,7 @@ export default defineComponent({
     }
 
     .prepend-container {
-      @apply items-center my-1 py-2 px-1.5 border-r-0 border-l border-t border-b border-solid rounded-l-lg;
+      @apply absolute z-50 nm-inset-$f-primary left-0 h-10 items-center  my-1 py-2 px-1.5 border-r-0 border-l border-t border-b border-solid rounded-l-lg;
 
       &.invalid {
         @apply border-red-500 text-red-500 border-opacity-60;
