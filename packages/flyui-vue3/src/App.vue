@@ -38,6 +38,15 @@ const scrollable = {
         </f-drawer>
       </section>
       <section>
+        <h5>Text Field</h5>
+        <div class="flex justify-center">
+          <div class="w-11/12 md:w-3/4">
+            <f-text-field label="Hello world" />
+            <f-text-field label="Hello world" required message="ahihi" />
+          </div>
+        </div>
+      </section>
+      <section>
         <h5>Icons</h5>
         <div class="flex flex-row justify-center gap-4">
           <f-icon name="fly_logo" width="40px" height="40px" original />
