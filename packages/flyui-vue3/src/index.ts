@@ -2,12 +2,14 @@ import { VueSvgIconPlugin } from '@yzfe/vue3-svgicon'
 
 import FButton from '@/components/FButton/index.vue'
 import FDrawer from '@/components/FDrawer/index.vue'
+import FTextField from '@/components/FTextField/index.vue'
 import FIcon from '@/components/FIcon/index.vue'
 
 const components = {
   FButton,
   FDrawer,
   FIcon,
+  FTextField,
 }
 
 import 'virtual:windi.css'
@@ -44,4 +46,5 @@ export { theme, updateTheme, defaultTheme } from '@gaconkzk/core/theme'
 export { default as FButton } from '@/components/FButton'
 export { default as FDrawer } from '@/components/FDrawer'
 export { default as FIcon } from '@/components/FIcon'
+export { default as FTextField } from '@/components/FTextField'
 // -- end

@@ -38,6 +38,80 @@ const scrollable = {
         </f-drawer>
       </section>
       <section>
+        <h5>Text Field</h5>
+        <div class="flex justify-center mx-4">
+          <div class="grid grid-cols-2 gap-4">
+            <f-text-field label="Hello world" />
+            <f-text-field label="Hello world" required message="ahihi" />
+            <f-text-field
+              label="Text field disabled"
+              disabled
+              required
+              message="ahihi"
+              value="ahihi"
+            />
+            <f-text-field
+              label="Text field read only"
+              read-only
+              required
+              message="ahihi"
+            />
+            <f-text-field label="Append Icon">
+              <template #append>
+                <f-icon
+                  name="fly_filled"
+                  width="15px"
+                  height="15px"
+                  class="!text-blue-500"
+                />
+              </template>
+            </f-text-field>
+            <f-text-field label="prepend Icon">
+              <template #prepend>
+                <f-icon
+                  name="fly_filled"
+                  width="15px"
+                  height="15px"
+                  class="!text-blue-500"
+                />
+              </template>
+            </f-text-field>
+            <f-text-field label="prepend Icon" invalid message="invalid!">
+              <template #prepend>
+                <f-icon
+                  name="fly_filled"
+                  width="15px"
+                  height="15px"
+                  class="!text-blue-500"
+                />
+              </template>
+            </f-text-field>
+            <f-text-field
+              label="prepend Icon and append icon - invalid"
+              invalid
+              message="invalid!"
+            >
+              <template #prepend>
+                <f-icon
+                  name="fly_filled"
+                  width="15px"
+                  height="15px"
+                  class="!text-blue-500"
+                />
+              </template>
+              <template #append>
+                <f-icon
+                  name="fly_filled"
+                  width="15px"
+                  height="15px"
+                  class="!text-blue-500"
+                />
+              </template>
+            </f-text-field>
+          </div>
+        </div>
+      </section>
+      <section>
         <h5>Icons</h5>
         <div class="flex flex-row justify-center gap-4">
           <f-icon name="fly_logo" width="40px" height="40px" original />
