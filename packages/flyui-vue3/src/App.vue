@@ -129,13 +129,7 @@ const scrollable = {
 </template>
 
 <style lang="scss">
-:root {
-  --f-primary: theme('colors.prim.2');
-  --f-primary-lighter: theme('colors.prim.2-lighter');
-  --f-primary-shadow: theme('colors.prim.2-shadow');
-  --f-primary-highlight: theme('colors.prim.2-highlight');
-  --t-primary: theme('textColor.prim.2');
-}
+@import '@gaconkzk/core/css-variables';
 
 html {
   @apply text-$t-primary text-base;

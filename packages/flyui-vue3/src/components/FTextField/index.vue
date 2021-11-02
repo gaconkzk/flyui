@@ -163,12 +163,12 @@ export default defineComponent({
   input[type='email'].invalid,
   input[type='password'].invalid,
   input[type='time'].invalid {
-    @apply nm-inset-$f-primary border-red-500 rounded-md h-10 ring-0 ring-current outline-current outline-none;
+    @apply nm-inset-$f-primary border-$f-error rounded-md h-10 ring-0 ring-current outline-current outline-none;
 
     &:hover:not(.disabled):not(:read-only),
     &:focus:not(.disabled):not(:read-only) {
-      @apply outline-red-900;
-      outline: red solid 0.5px;
+      @apply outline-$f-error-dark;
+      outline: var(--f-error) solid 0.5px;
       outline-offset: -0.5px;
     }
     &.append {
@@ -186,7 +186,7 @@ export default defineComponent({
 
   // Should have space for display error - and dont break layout
   .f-invalid {
-    @apply text-red-500 text-xs mx-1;
+    @apply text-$f-error text-xs mx-1;
     &.error-message {
       // do not take original space - use absolute
       @apply absolute -bottom-3;
@@ -207,7 +207,7 @@ export default defineComponent({
       &.invalid,
       &.invalid:focus,
       &.invalid:hover {
-        @apply border-red-500 border-opacity-60;
+        @apply border-$f-error border-opacity-60;
       }
     }
 
@@ -215,7 +215,7 @@ export default defineComponent({
       @apply absolute  z-50 nm-inset-$f-primary right-0 h-10 items-center flex my-1 py-2 px-1.5  border-l-0 border-r border-t border-b border-solid rounded-r-lg;
 
       &.invalid {
-        @apply border-red-500 text-red-500 border-opacity-60;
+        @apply border-$f-error text-$f-error border-opacity-60;
       }
 
       &.disabled {
@@ -227,7 +227,7 @@ export default defineComponent({
       @apply absolute z-50 nm-inset-$f-primary left-0 h-10 items-center  my-1 py-2 px-1.5 border-r-0 border-l border-t border-b border-solid rounded-l-lg;
 
       &.invalid {
-        @apply border-red-500 text-red-500 border-opacity-60;
+        @apply border-$f-error text-$f-error border-opacity-60;
       }
 
       &.disabled {
