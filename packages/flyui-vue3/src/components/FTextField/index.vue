@@ -4,7 +4,7 @@
       {{ label }}
       <span v-if="required" class="f-invalid">*</span>
     </label>
-    <div class="f-input-group">
+    <div class="f-input-group" :class="inputClasses">
       <span v-if="isPrepend" class="prepend-container" :class="inputClasses">
         <slot name="prepend" />
       </span>
@@ -30,13 +30,15 @@
       class="f-invalid error-message"
       :class="{ 'xyz-in': !!message, 'xyz-out': !message, 'no-label': !label }"
       xyz="fade up"
-      >{{ message }}</span
     >
+      {{ message }}
+    </span>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, ref, computed } from 'vue'
+import { TextFieldType } from '../../@types/forms/textField'
 
 export default defineComponent({
   name: 'FTextField',
@@ -76,34 +78,25 @@ export default defineComponent({
     },
   },
   emits: ['update:value'],
-  data() {
-    return {
-      loading: false,
-    }
-  },
-  computed: {
-    isPrepend(): boolean {
-      return !!this.$slots.prepend
-    },
-    isAppend(): boolean {
-      return !!this.$slots.append
-    },
-    inputClasses(): string[] {
-      return [
-        this.disabled ? 'disabled' : '',
-        this.invalid || !!this.message ? 'invalid' : '',
-        !!this.$slots.prepend ? 'prepend' : '',
-        !!this.$slots.append ? 'append' : '',
-      ]
-    },
-  },
-  methods: {
-    callback(e: any): void {
-      this.$emit(
+  setup(props: TextFieldType, { emit, slots }) {
+    const loading = ref<boolean>(false)
+    const isPrepend = computed(() => !!slots.prepend)
+    const isAppend = computed(() => !!slots.append)
+    const inputClasses = computed(() => [
+      props.disabled ? 'disabled' : '',
+      props.readOnly ? 'read-only' : '',
+      props.invalid || !!props.message ? 'invalid' : '',
+      !!slots.prepend ? 'prepend' : '',
+      !!slots.append ? 'append' : '',
+    ])
+    const callback = (e: any) => {
+      console.log(e.target.value)
+      emit(
         'update:value',
-        this.type !== 'file' ? e.target.value : e.target.files,
+        props.type !== 'file' ? e.target.value : e.target.files,
       )
-    },
+    }
+    return { loading, isPrepend, isAppend, inputClasses, callback, ...props }
   },
 })
 </script>
@@ -122,24 +115,25 @@ export default defineComponent({
     appearance: textfield;
   }
 
-  input[type='text']:focus,
-  input[type='email']:focus,
-  input[type='url']:focus,
-  input[type='password']:focus,
-  input[type='number']:focus,
-  input[type='date']:focus,
-  input[type='datetime-local']:focus,
-  input[type='month']:focus,
-  input[type='search']:focus,
-  input[type='tel']:focus,
-  input[type='time']:focus,
-  input[type='week']:focus,
-  input[multiple]:focus,
-  textarea:focus,
-  select:focus {
-    @apply nm-inset-$f-primary-sm outline-$f-primary;
-    outline: solid 0.5px;
-    outline-offset: -0.5px;
+  input[type='text'],
+  input[type='email'],
+  input[type='url'],
+  input[type='password'],
+  input[type='number'],
+  input[type='date'],
+  input[type='datetime-local'],
+  input[type='month'],
+  input[type='search'],
+  input[type='tel'],
+  input[type='time'],
+  input[type='week'],
+  input[multiple],
+  textarea,
+  select {
+    &:focus,
+    &:hover {
+      @apply ring-0 ring-current outline-current outline-none;
+    }
   }
 
   input[type='text']:not(.disabled):not(.invalid),
@@ -147,15 +141,7 @@ export default defineComponent({
   input[type='email']:not(.disabled):not(.invalid),
   input[type='password']:not(.disabled):not(.invalid),
   input[type='time']:not(.disabled):not(.invalid) {
-    @apply nm-inset-$f-primary border-$f-primary rounded-md h-10;
-
-    &.append {
-      @apply pr-8;
-    }
-
-    &.prepend {
-      @apply pl-8;
-    }
+    @apply nm-inset-$f-primary border-$f-primary h-10;
   }
 
   input[type='text'].invalid,
@@ -163,20 +149,14 @@ export default defineComponent({
   input[type='email'].invalid,
   input[type='password'].invalid,
   input[type='time'].invalid {
-    @apply nm-inset-$f-primary border-red-500 rounded-md h-10 ring-0 ring-current outline-current outline-none;
+    @apply nm-inset-$f-primary h-10 ring-0 ring-current outline-current outline-none;
 
-    &:hover:not(.disabled):not(:read-only),
-    &:focus:not(.disabled):not(:read-only) {
-      @apply outline-red-900;
-      outline: red solid 0.5px;
-      outline-offset: -0.5px;
-    }
     &.append {
-      @apply pr-8;
+      @apply rounded-br-none rounded-tr-none border-r-0;
     }
 
     &.prepend {
-      @apply pl-8;
+      @apply rounded-bl-none rounded-tl-none border-l-0;
     }
   }
 
@@ -194,10 +174,25 @@ export default defineComponent({
   }
 
   .f-input-group {
-    @apply flex w-full items-stretch;
-    .f-input {
-      @apply relative nm-inset-$f-primary-sm border-$f-primary my-1 cursor-text rounded-md w-full px-2;
+    @apply flex w-full items-stretch rounded-lg;
+    border: 1px solid var(--f-primary-lighter);
 
+    &:hover,
+    &:focus {
+      &:not(.invalid) {
+        border: 1px solid var(--f-primary-highlight);
+      }
+      &.invalid:not(.disabled):not(.read-only) {
+        border: 1px solid red;
+      }
+    }
+
+    .f-input {
+      @apply nm-inset-$f-primary cursor-text rounded-md w-full px-2;
+
+      &:read-only {
+        cursor: pointer;
+      }
       &.disabled,
       &.disabled:focus,
       &.disabled:hover {
@@ -207,15 +202,24 @@ export default defineComponent({
       &.invalid,
       &.invalid:focus,
       &.invalid:hover {
-        @apply border-red-500 border-opacity-60;
+        @apply border-red-700 border-opacity-60;
+      }
+
+      &.append {
+        @apply rounded-tr-none rounded-br-none border-r-0;
+      }
+
+      &.prepend {
+        @apply rounded-tl-none rounded-bl-none border-l-0;
       }
     }
 
     .append-container {
-      @apply absolute  z-50 nm-inset-$f-primary right-0 h-10 items-center flex my-1 py-2 px-1.5  border-l-0 border-r border-t border-b border-solid rounded-r-lg;
+      @apply h-10 items-center flex py-2 px-1.5 border-l-0 border-r border-t border-b border-solid rounded-r-lg;
+      border: 1px solid var(--f-primary-lighter);
 
       &.invalid {
-        @apply border-red-500 text-red-500 border-opacity-60;
+        @apply border-red-700 text-red-500 border-opacity-60;
       }
 
       &.disabled {
@@ -224,10 +228,12 @@ export default defineComponent({
     }
 
     .prepend-container {
-      @apply absolute z-50 nm-inset-$f-primary left-0 h-10 items-center  my-1 py-2 px-1.5 border-r-0 border-l border-t border-b border-solid rounded-l-lg;
+      @apply h-10 items-center flex py-2 px-1.5 border-r-0 border-l border-t border-b border-solid rounded-l-lg;
+
+      border: 1px solid var(--f-primary-lighter);
 
       &.invalid {
-        @apply border-red-500 text-red-500 border-opacity-60;
+        @apply border-red-700 text-red-500 border-opacity-60;
       }
 
       &.disabled {

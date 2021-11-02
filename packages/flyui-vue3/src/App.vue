@@ -40,7 +40,7 @@ const scrollable = {
       <section>
         <h5>Text Field</h5>
         <div class="flex justify-center mx-4">
-          <div class="grid grid-cols-2 gap-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <f-text-field label="Hello world" />
             <f-text-field label="Hello world" required message="ahihi" />
             <f-text-field
@@ -108,6 +108,36 @@ const scrollable = {
                 />
               </template>
             </f-text-field>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h5>Select</h5>
+        <div class="flex flex-col justify-center">
+          <div class="mx-4 w-3/4 md:w-4/9">
+            <f-select
+              label="Select value ..."
+              placeholder="select ..."
+              :options="[
+                'vue2',
+                'vue3',
+                'Some quick example text to build on the card title and make up the bulk of the cards content.',
+                'Fly UI',
+                'Select field',
+                'Input field',
+                'style morphism',
+                'style new morphism',
+                'theme dark',
+                'default',
+              ]"
+              :selected="'vue3'"
+            />
+            <f-text-field
+              label="Text field read only"
+              read-only
+              required
+              message="ahihi"
+            />
           </div>
         </div>
       </section>

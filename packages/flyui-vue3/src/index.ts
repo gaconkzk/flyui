@@ -3,6 +3,7 @@ import { VueSvgIconPlugin } from '@yzfe/vue3-svgicon'
 import FButton from '@/components/FButton/index.vue'
 import FDrawer from '@/components/FDrawer/index.vue'
 import FTextField from '@/components/FTextField/index.vue'
+import FSelect from '@/components/FSelect/index.vue'
 import FIcon from '@/components/FIcon/index.vue'
 
 const components = {
@@ -10,6 +11,7 @@ const components = {
   FDrawer,
   FIcon,
   FTextField,
+  FSelect,
 }
 
 import 'virtual:windi.css'
@@ -47,4 +49,5 @@ export { default as FButton } from '@/components/FButton'
 export { default as FDrawer } from '@/components/FDrawer'
 export { default as FIcon } from '@/components/FIcon'
 export { default as FTextField } from '@/components/FTextField'
+export { default as FSelect } from '@/components/FSelect'
 // -- end

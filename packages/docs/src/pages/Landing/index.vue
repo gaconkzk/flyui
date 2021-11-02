@@ -43,9 +43,30 @@ const toggleDrawer = ref<boolean>(false)
       </div>
     </section>
     <section>
+      <h5>Select</h5>
+      <div class="flex flex-col justify-center mx-4">
+        <f-select
+          label="Select value ..."
+          placeholder="select ..."
+          :options="[
+            'Some quick example text to build on the card title and make up the bulk of the cards content.',
+            'vue3',
+            'Fly UI',
+            'Select field',
+            'Input field',
+            'style morphism',
+            'style new morphism',
+            'theme dark',
+            'default',
+          ]"
+          :selected="'Some quick example text to build on the card title and make up the bulk of the cards content.'"
+        />
+      </div>
+    </section>
+    <section>
       <h5>Text Field</h5>
       <div class="flex justify-center mx-4">
-        <div class="grid grid-cols-2 gap-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <f-text-field label="Hello world" />
           <f-text-field label="Hello world" required message="ahihi" />
           <f-text-field

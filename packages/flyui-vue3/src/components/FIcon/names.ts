@@ -6,6 +6,7 @@ const icons: { [key: string]: Promise<typeof import('*.svg')> } = {
   fly: import('@/assets/icons/svg/fly.svg'),
   s_fly_filled: import('@/assets/icons/svg/s_fly_filled.svg'),
   s_fly: import('@/assets/icons/svg/s_fly.svg'),
+  'chevron-down': import('@/assets/icons/svg/chevron-down.svg'),
 }
 export const get = (name: string) => {
   return icons[name] ?? icons.flies_bag

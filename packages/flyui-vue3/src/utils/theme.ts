@@ -14,7 +14,7 @@ export const theme = {
       '2-shadow': colors.warmGray[800],
       '2-highlight': colors.warmGray[500],
     },
-  },
+  }, 
   textColor: {
     prim: {
       1: colors.gray[200],
