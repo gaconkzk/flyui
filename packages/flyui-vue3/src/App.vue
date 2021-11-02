@@ -159,44 +159,5 @@ const scrollable = {
 </template>
 
 <style lang="scss">
-:root {
-  --f-primary: theme('colors.prim.2');
-  --f-primary-lighter: theme('colors.prim.2-lighter');
-  --f-primary-shadow: theme('colors.prim.2-shadow');
-  --f-primary-highlight: theme('colors.prim.2-highlight');
-  --t-primary: theme('textColor.prim.2');
-}
-
-html {
-  @apply text-$t-primary text-base;
-}
-body {
-  position: relative;
-}
-#app {
-  @apply font-sans antialiased text-center bg-$f-primary;
-  h1,
-  h2,
-  h3,
-  h4,
-  h5 {
-    @apply my-4;
-  }
-
-  h1 {
-    @apply text-5xl;
-  }
-  h2 {
-    @apply text-4xl;
-  }
-  h3 {
-    @apply text-3xl;
-  }
-  h4 {
-    @apply text-2xl;
-  }
-  h5 {
-    @apply text-xl;
-  }
-}
+@import '@gaconkzk/core/styles/variables';
 </style>

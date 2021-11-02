@@ -43,5 +43,13 @@ export default defineConfig({
     },
   },
   assetsInclude: ['**/*.svg'],
+  resolve: {
+    alias: [
+      {
+        find: '@',
+        replacement: path.resolve(__dirname, 'src'),
+      },
+    ],
+  },
   plugins: [svelte(), WindiCSS()],
 })

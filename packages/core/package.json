@@ -1,11 +1,12 @@
 {
   "name": "@gaconkzk/core",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "typings": "core.d.ts",
   "files": [
     "utils",
-    "tailwindcss-neumorphism.ts"
+    "tailwindcss-neumorphism.ts",
+    "styles"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -18,6 +19,10 @@
     "./tw-nm": {
       "import": "./tailwindcss-neumorphism.ts",
       "require": "./tailwindcss-neumorphism.ts"
+    },
+    "./styles/*": {
+      "import": "./styles/*",
+      "require": "./styles/*"
     }
   },
   "author": "gaconkzk",
