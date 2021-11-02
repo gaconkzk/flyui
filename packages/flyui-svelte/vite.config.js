@@ -4,6 +4,8 @@ import { svelte } from '@sveltejs/vite-plugin-svelte'
 import WindiCSS from 'vite-plugin-windicss'
 import * as path from 'path'
 
+import { createSveltePreprocessHandling } from './svelte.config'
+
 const __dirname = path.resolve()
 
 // https://vitejs.dev/config/
@@ -43,5 +45,7 @@ export default defineConfig({
     },
   },
   assetsInclude: ['**/*.svg'],
-  plugins: [svelte(), WindiCSS()],
+  plugins: [svelte({
+    preprocess: createSveltePreprocessHandling()
+  }), WindiCSS()],
 })
