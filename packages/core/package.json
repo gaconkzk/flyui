@@ -6,7 +6,7 @@
   "files": [
     "utils",
     "tailwindcss-neumorphism.ts",
-    "variables.scss"
+    "styles"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -20,9 +20,9 @@
       "import": "./tailwindcss-neumorphism.ts",
       "require": "./tailwindcss-neumorphism.ts"
     },
-    "./css-variables": {
-      "import": "./variables.scss",
-      "require": "./variables.scss"
+    "./styles/*": {
+      "import": "./styles/*",
+      "require": "./styles/*"
     }
   },
   "author": "gaconkzk",

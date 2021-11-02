@@ -89,44 +89,5 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-.button {
-  @apply text-$t-primary opacity-80 rounded-lg inline-block text-center select-none py-1 px-4;
-  &:hover {
-    @apply opacity-100;
-  }
-
-  &.flat {
-    @apply nm-flat-$f-primary;
-
-    &:hover {
-      @apply nm-flat-$f-primary;
-    }
-
-    &.activated,
-    &:active {
-      @apply nm-inset-$f-primary;
-    }
-  }
-
-  &.convex {
-    @apply nm-convex-$f-primary;
-    &.activated,
-    &:active {
-      @apply nm-concave-$f-primary;
-    }
-  }
-
-  &.fround {
-    @apply rounded-full;
-  }
-
-  &:hover {
-    @apply opacity-90;
-  }
-
-  &.activated,
-  &:active {
-    @apply opacity-100;
-  }
-}
+@import '@gaconkzk/core/styles/components/fbutton.scss';
 </style>

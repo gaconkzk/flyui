@@ -145,17 +145,5 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-.drawer {
-  @apply nm-flat-$f-primary;
-  --xyz-in-duration: 0.8s;
-  --xyz-out-duration: 0.8s;
-
-  z-index: 999;
-}
-
-.overlay-drawer {
-  @apply fixed inset-0 opacity-80 bg-$f-primary;
-
-  z-index: 99;
-}
+@import '@gaconkzk/core/styles/components/fdrawer.scss';
 </style>

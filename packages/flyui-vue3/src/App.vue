@@ -129,7 +129,7 @@ const scrollable = {
 </template>
 
 <style lang="scss">
-@import '@gaconkzk/core/css-variables';
+@import '@gaconkzk/core/styles/variables';
 
 html {
   @apply text-$t-primary text-base;
