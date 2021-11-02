@@ -2,7 +2,6 @@
   "editor.quickSuggestions": {
     "strings": true
   },
-  "svelte.plugin.css.diagnostics.enable": false,
   "scss.validate": false,
-  "css.validate": false,
+  "css.validate": false
 }

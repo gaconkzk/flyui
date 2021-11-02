@@ -1,4 +1,6 @@
 <script lang="ts">
+  import '@gaconkzk/core/styles/components/fbutton.scss';
+
   import { createEventDispatcher } from 'svelte'
 
   const dispatch = createEventDispatcher()
@@ -25,7 +27,7 @@
   $: {
     btnClasses = [
       'button',
-      nmType,
+      nmType ?? 'flat',
       activated ? 'activated' : '',
       rounded ? 'fround' : '',
       variant ?? '',
@@ -38,7 +40,3 @@
 <div class={btnClasses.join(' ')} tabindex="0" on:click={handleClick}>
   <slot />
 </div>
-
-<style lang="scss">
-  @import '@gaconkzk/core/styles/components/fbutton.scss';
-</style>

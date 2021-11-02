@@ -20,7 +20,7 @@
     "prettier-plugin-svelte": "^2.4.0",
     "sass": "^1.43.2",
     "svelte": "^3.37.0",
-    "svelte-check": "^2.1.0",
+    "svelte-check": "^2.2.8",
     "svelte-preprocess": "^4.7.2",
     "svelte-windicss-preprocess": "^4.1.5",
     "tslib": "^2.2.0",
