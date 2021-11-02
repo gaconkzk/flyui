@@ -7,6 +7,7 @@
   &.flat {
     @apply nm-flat-$f-primary;
 
+    // keep same for mobile
     &:hover {
       @apply nm-flat-$f-primary;
     }
@@ -36,5 +37,12 @@
   &.activated,
   &:active {
     @apply opacity-100;
+  }
+}
+
+// this is fix for desktop/pc - no touch - when hover
+@media (hover: hover) and (pointer: fine) {
+  .button.flat:hover {
+    @apply nm-inset-$f-primary;
   }
 }

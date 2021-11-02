@@ -19,7 +19,7 @@
 
   function handleClick(e: Event) {
     if (!disabled) {
-      dispatch('click')
+      dispatch('click', e)
     }
   }
 

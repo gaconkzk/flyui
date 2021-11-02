@@ -1,1 +1,1 @@
-export { default as FButton } from '@/src/lib/FButton.svelte'
+export { default as FButton } from '@/lib/FButton.svelte'
