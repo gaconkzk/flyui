@@ -1,7 +1,7 @@
 .button {
   @apply text-$t-primary opacity-80 rounded-lg inline-block text-center select-none py-1 px-4;
   &:hover {
-    @apply opacity-100;
+    @apply opacity-100 cursor-pointer;
   }
 
   &.flat {

@@ -27,7 +27,7 @@
             name="fly_filled"
             width="40px"
             height="40px"
-            class="!text-blue-500"
+            class="!fill-blue-500"
           />
         </div>
       </section>

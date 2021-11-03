@@ -51,5 +51,8 @@ export default defineConfig({
       },
     ],
   },
-  plugins: [svelte(), WindiCSS()],
+  plugins: [
+    svelte(),
+    WindiCSS()
+  ],
 })

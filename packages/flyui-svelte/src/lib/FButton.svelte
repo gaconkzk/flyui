@@ -31,6 +31,7 @@
       activated ? 'activated' : '',
       rounded ? 'fround' : '',
       variant ?? '',
+      variantType,
       disabled ? 'disabled' : '',
       size,
     ]

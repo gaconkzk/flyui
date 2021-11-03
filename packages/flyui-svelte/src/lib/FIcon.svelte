@@ -1,16 +1,50 @@
-<template>
-  <svg-icon :data="icon" />
-</template>
-
 <script lang="ts">
+  import {
+    svgIcon,
+    Props,
+    Options,
+    setOptions,
+    getPropKeys,
+    Icon,
+    IconData,
+  } from '@yzfe/svgicon'
+
+  import { get } from './names'
+
   export let width: string
   export let height: string
   export let original: boolean = false
   export let name: string
   let classes = ''
   export { classes as class }
+
+  let data: string
+
+  get(name).then((r) => data = r.default)
+
+  // This should be moved to core as a function :D - 
+  // hacking modify svg string attributes by fake import to dom
+  function processData(svgHtml: string, props: any): string {
+    // this temporary div should be deleted after this function call? or memory leaked??
+    const tempdiv = document.createElement('div')
+    tempdiv.innerHTML = svgHtml
+    const svg = tempdiv.firstElementChild
+    if (svg) {
+      svg.setAttribute('width', width)
+      svg.setAttribute('height', height)
+      svg.setAttribute('original', `${original}`)
+      svg.setAttribute('class', classes)
+    }
+    
+    return tempdiv.innerHTML
+  }
+
+  $: {
+    if (data) {
+      // process data ---
+      data = processData(data, { width, height, original, class: classes })
+    }
+  }
 </script>
 
-<svg class={classes}>
-  <use href={`../assets/icons/svg/${name}.svg#${name}`} />
-</svg>
+{@html data}
