@@ -25,10 +25,10 @@
   // This should be moved to core as a function :D - 
   // hacking modify svg string attributes by fake import to dom
   function processData(svgHtml: string, props: any): string {
-    // this temporary div should be deleted after this function call? or memory leaked??
-    const tempdiv = document.createElement('div')
-    tempdiv.innerHTML = svgHtml
-    const svg = tempdiv.firstElementChild
+    // this temporary should be deleted after this function call? or memory leaked??
+    const template = document.createElement('template')
+    template.innerHTML = svgHtml
+    const svg = template.firstElementChild
     if (svg) {
       svg.setAttribute('width', width)
       svg.setAttribute('height', height)
@@ -36,7 +36,7 @@
       svg.setAttribute('class', classes)
     }
     
-    return tempdiv.innerHTML
+    return template.innerHTML
   }
 
   $: {
