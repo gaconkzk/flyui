@@ -1,14 +1,4 @@
 <script lang="ts">
-  import {
-    svgIcon,
-    Props,
-    Options,
-    setOptions,
-    getPropKeys,
-    Icon,
-    IconData,
-  } from '@yzfe/svgicon'
-
   import { get } from './names'
 
   export let width: string
@@ -26,7 +16,7 @@
   // hacking modify svg string attributes by fake import to dom
   function processData(svgHtml: string, props: any): string {
     // this temporary should be deleted after this function call? or memory leaked??
-    const template = document.createElement('template')
+    const template = document.createElement('div')
     template.innerHTML = svgHtml
     const svg = template.firstElementChild
     if (svg) {

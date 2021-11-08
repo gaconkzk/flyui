@@ -1,10 +1,14 @@
 <script lang="ts">
   // due to scss import error in style - recommend import all in ts script :D :D :D
   import '@gaconkzk/core/styles/variables.scss'
+  import '@gaconkzk/core/styles/neumophism.scss'
+  import '@gaconkzk/core/styles/components/fscrollable.scss'
 
   import FButton from './lib/FButton.svelte'
   
   import FIcon from './lib/FIcon.svelte'
+
+  import scrollable from './lib/useScrollable'
 </script>
 
 <div>
@@ -29,6 +33,16 @@
             height="40px"
             class="!fill-blue-500"
           />
+        </div>
+      </section>
+      <section>
+        <h5>Scrollable</h5>
+        <div class="flex flex-row justify-center">
+          <div class="flat w-80 h-40" use:scrollable dir="rtl">
+            <div class="h-80">
+              hello inside
+            </div>
+          </div>
         </div>
       </section>
     </div>

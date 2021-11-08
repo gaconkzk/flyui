@@ -41,11 +41,10 @@ export class FScrollable {
   wrapper: HTMLElement
   el: HTMLElement
   scrollRatio: number = 1
-  unBind: () => void
 
   constructor(el: HTMLElement) {
     this.target = el
-    this.content = el.firstElementChild ?? new Node()
+    this.content = el.firstElementChild as Node
 
     this.direction = window.getComputedStyle(this.target).direction
     //Create a reference to the function binding to remove the event listeners
@@ -87,24 +86,24 @@ export class FScrollable {
   	if (css['height'] === '0px' && css['max-height'] !== '0px') {
     	el.style.height = css['max-height']
     }
+  }
 
-    this.unBind = function() {
-      //Remove event listeners
-      window.removeEventListener('resize', this.mB)
-      this.el.removeEventListener('scroll', this.mB)
-      this.el.removeEventListener('mouseenter', this.mB)
-      
-      this.target.classList.remove('ss-container')
+  unBind() {
+    //Remove event listeners
+    window.removeEventListener('resize', this.mB)
+    this.el.removeEventListener('scroll', this.mB)
+    this.el.removeEventListener('mouseenter', this.mB)
+    
+    this.target.classList.remove('ss-container')
 
-      //Unwrap the initial content and remove remaining wrappers
-      this.target.insertBefore(this.content, this.wrapper)
-      this.target.removeChild(this.wrapper)
+    //Unwrap the initial content and remove remaining wrappers
+    this.target.insertBefore(this.content, this.wrapper)
+    this.target.removeChild(this.wrapper)
 
-      //Remove the bar including its drag-dealer event listener
-      if (this.bar) {
-        this.target.removeChild(this.bar)
-        this.bar = null //make way for the garbage collector
-      }
+    //Remove the bar including its drag-dealer event listener
+    if (this.bar) {
+      this.target.removeChild(this.bar)
+      this.bar = null //make way for the garbage collector
     }
   }
 
@@ -118,10 +117,7 @@ export class FScrollable {
     var isRtl = _this.direction === 'rtl';
 
     if (_this.bar) {
-      var right = isRtl ?
-      (_this.target.clientWidth - _this.bar.clientWidth + 18) :
-      (_this.target.clientWidth - _this.bar.clientWidth * -1)
-
+      let right = isRtl ? -3  : 3
       raf(function() {
         // 
         if (_this.bar) {

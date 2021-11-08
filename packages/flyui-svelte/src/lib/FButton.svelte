@@ -5,17 +5,15 @@
 
   const dispatch = createEventDispatcher()
 
-  export let tag = 'button'
   export let disabled = false
   export let activated = false
   export let variant = ''
   export let variantType = 'normal'
   export let size = ''
   export let rounded = false
-  export let type = ''
   export let nmType = 'flat'
   export { classes as class }
-  let classes: string | string[] = ''
+  let classes: string = ''
 
   function handleClick(e: Event) {
     if (!disabled) {
@@ -34,6 +32,7 @@
       variantType,
       disabled ? 'disabled' : '',
       size,
+      classes ?? '',
     ]
   }
 </script>
