@@ -1,4 +1,4 @@
-import {FScrollable} from './FScrollable'
+import { FScrollable } from '@gaconkzk/core/utils/FScrollable'
 
 export default function scrollable(node: HTMLElement) {
   Object.defineProperty(node, 'data-f-scrollable', { value: new FScrollable(node), configurable: true });

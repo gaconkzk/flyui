@@ -16,6 +16,10 @@
       "import": "./utils/theme.ts",
       "require": "./utils/theme.ts"
     },
+    "./utils/*": {
+      "import": "./utils/*",
+      "require": "./utils/*"
+    },
     "./tw-nm": {
       "import": "./tailwindcss-neumorphism.ts",
       "require": "./tailwindcss-neumorphism.ts"
