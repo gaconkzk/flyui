@@ -1,3 +1,5 @@
+$scroll-width: 0.4rem;
+
 .ss-wrapper {
   overflow: hidden;
   width: 100%;
@@ -24,8 +26,8 @@
 
 .ss-scroll {
   position: relative;
-  background: rgba(0, 0, 0, 0.1);
-  width: 9px;
+  background: var(--f-scroll);
+  width: $scroll-width;
   border-radius: 4px;
   top: 0;
   z-index: 2;

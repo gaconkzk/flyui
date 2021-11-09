@@ -1,3 +1,4 @@
+import '@gaconkzk/core/styles/components/fscrollable.scss'
 import { FScrollable } from '@gaconkzk/core/utils/FScrollable'
 
 export default function scrollable(node: HTMLElement) {
