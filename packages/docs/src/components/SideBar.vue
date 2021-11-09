@@ -36,7 +36,9 @@ function toggle() {
 
 <style lang="scss">
 .sidebar {
-  @apply fixed lg:(z-0 transition-transform transform translate-x-64) h-screen w-64 z-1 -left-64 transition-transform transform translate-x-0;
+  @apply fixed lg:(z-0 transition-transform transform translate-x-64) w-64 z-999 -left-64 transition-transform transform translate-x-0;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
   &.display {
     @apply transition-transform transform translate-x-64;
   }
@@ -74,7 +76,7 @@ function toggle() {
   }
 
   &.display {
-    @apply z-1 transition-transform transform translate-x-64;
+    @apply z-999 transition-transform transform translate-x-64;
   }
 }
 </style>

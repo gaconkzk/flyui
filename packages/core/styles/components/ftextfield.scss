@@ -37,11 +37,11 @@
     @apply nm-inset-$f-primary rounded-md h-10;
 
     &.append {
-      @apply pr-8;
+      @apply mr-28px rounded-r-none border-r-0;
     }
 
     &.prepend {
-      @apply pl-8;
+      @apply ml-28px rounded-l-none border-l-0;
     }
   }
 
@@ -52,18 +52,12 @@
   input[type='time'].invalid {
     @apply nm-inset-$f-primary border-$f-error rounded-md h-10 ring-0 ring-current outline-current outline-none;
 
-    &:hover:not(.disabled):not(:read-only),
-    &:focus:not(.disabled):not(:read-only) {
-      @apply outline-$f-error-dark;
-      outline: var(--f-error) solid 0.5px;
-      outline-offset: -0.5px;
-    }
     &.append {
-      @apply pr-8;
+      @apply mr-28px rounded-r-none border-r-0;
     }
 
     &.prepend {
-      @apply pl-8;
+      @apply ml-28px rounded-l-none border-l-0;
     }
   }
 
@@ -94,15 +88,15 @@
       &.invalid,
       &.invalid:focus,
       &.invalid:hover {
-        @apply border-$f-error border-opacity-60;
+        @apply border-opacity-60 border-$f-error;
       }
     }
 
     .append-container {
-      @apply absolute z-50 nm-flat-$f-primary right-0 h-10 items-center flex my-1 py-2 px-1.5 border-l-0 rounded-r-lg;
+      @apply absolute nm-flat-$f-primary right-0 h-10 items-center flex my-1 py-2 px-1.5 border-l-0 rounded-r-lg;
 
       &.invalid {
-        @apply border-$f-error text-$f-error border-opacity-60;
+        @apply text-$f-error border-opacity-60 border-$f-error;
       }
 
       &.disabled {
@@ -111,10 +105,10 @@
     }
 
     .prepend-container {
-      @apply absolute z-50 nm-flat-$f-primary left-0 h-10 items-center flex my-1 py-2 px-1.5 border-r-0 rounded-l-lg;
+      @apply absolute nm-flat-$f-primary left-0 h-10 items-center flex my-1 py-2 px-1.5 border-r-0 rounded-l-lg;
 
       &.invalid {
-        @apply border-$f-error text-$f-error border-opacity-60;
+        @apply text-$f-error border-opacity-60 border-$f-error;
       }
 
       &.disabled {
