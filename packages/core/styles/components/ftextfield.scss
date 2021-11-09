@@ -93,10 +93,10 @@
     }
 
     .append-container {
-      @apply absolute nm-flat-$f-primary right-0 h-10 items-center flex my-1 py-2 px-1.5 border-l-0 rounded-r-lg;
+      @apply absolute right-0 h-10 items-center flex my-1 py-2 px-1.5 border-$f-primary-lighter border-1 border-l-0 rounded-r-lg;
 
       &.invalid {
-        @apply text-$f-error border-opacity-60 border-$f-error;
+        @apply text-$f-error border-opacity-60 border-$f-error border-l-0;
       }
 
       &.disabled {
@@ -105,10 +105,10 @@
     }
 
     .prepend-container {
-      @apply absolute nm-flat-$f-primary left-0 h-10 items-center flex my-1 py-2 px-1.5 border-r-0 rounded-l-lg;
+      @apply absolute left-0 h-10 items-center flex my-1 py-2 px-1.5 border-$f-primary-lighter border-1 border-r-0 rounded-l-lg;
 
       &.invalid {
-        @apply text-$f-error border-opacity-60 border-$f-error;
+        @apply text-$f-error border-opacity-60 border-$f-error border-r-0;
       }
 
       &.disabled {

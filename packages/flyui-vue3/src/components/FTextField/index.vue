@@ -37,8 +37,6 @@
 </template>
 
 <script lang="ts">
-import '@gaconkzk/core/styles/components/ftextfield.scss'
-
 import { defineComponent, ref, computed } from 'vue'
 import { TextFieldType } from '../../@types/forms/textField'
 
@@ -102,3 +100,7 @@ export default defineComponent({
   },
 })
 </script>
+
+<style lang="scss" scoped>
+@import '@gaconkzk/core/styles/components/ftextfield.scss';
+</style>

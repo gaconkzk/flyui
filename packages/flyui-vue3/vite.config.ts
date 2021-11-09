@@ -56,11 +56,11 @@ export default defineConfig({
     port: 3001,
   },
   plugins: [
+    WindiCSS(),
     vue(),
     svgicon({
       include: ['**/assets/icons/svg/**/*.svg'],
     }),
-    WindiCSS(),
     libInjectCss(),
   ],
 })
