@@ -36,7 +36,8 @@
       </div>
       <div
         v-if="!disabled && !readOnly"
-        class="items w-full scrollbar-thin"
+        ref="itemsContainer"
+        class="items w-full ss-container"
         :class="{
           selectHide: !delayOpen,
           'xyz-in': open,
@@ -75,7 +76,15 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, ref, watch } from 'vue'
+import { FScrollable } from '@gaconkzk/core/utils/FScrollable'
+import {
+  computed,
+  defineComponent,
+  ref,
+  watch,
+  onMounted,
+  onBeforeUnmount,
+} from 'vue'
 import { SelectType } from '../../@types/forms/select'
 
 export default defineComponent({
@@ -126,6 +135,7 @@ export default defineComponent({
   },
   emits: ['update:selected'],
   setup(props: SelectType, { emit, slots }) {
+    const itemsContainer = ref<HTMLElement | null>(null)
     const loading = ref<boolean>(false)
     const open = ref<boolean>(false)
     const delayOpen = ref<boolean>(false)
@@ -169,6 +179,32 @@ export default defineComponent({
       }
     })
 
+    onMounted(() => {
+      if (itemsContainer.value) {
+        Object.defineProperty(itemsContainer.value, 'data-f-scrollable', {
+          value: new FScrollable(itemsContainer.value),
+          configurable: true,
+        })
+      }
+    })
+
+    onBeforeUnmount(() => {
+      if (
+        !Object.prototype.hasOwnProperty.call(
+          itemsContainer.value,
+          'data-f-scrollable',
+        )
+      )
+        return
+
+      if (itemsContainer.value) {
+        const cnode: HTMLElement & { 'data-f-scrollable'?: FScrollable } =
+          itemsContainer.value
+        cnode['data-f-scrollable']?.unBind()
+        delete cnode['data-f-scrollable']
+      }
+    })
+
     return {
       selectClasses,
       loading,
@@ -179,6 +215,7 @@ export default defineComponent({
       displayValue,
       callback,
       optionClicked,
+      itemsContainer,
       ...props,
     }
   },
@@ -269,7 +306,7 @@ export default defineComponent({
     }
 
     .items {
-      @apply nm-flat-$f-primary border-red-200 border-solid absolute left-0 right-0 top-11 h-auto max-h-80 w-full rounded-lg rounded-t-none px-2 py-2 my-2 scrollbar;
+      @apply nm-flat-$f-primary border-red-200 border-solid absolute left-0 right-0 top-11 min-h-40 h-60 max-h-80 w-full rounded-lg rounded-t-none px-2 py-2 my-2;
 
       z-index: 1000;
 
