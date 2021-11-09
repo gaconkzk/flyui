@@ -99,7 +99,7 @@
     }
 
     .append-container {
-      @apply absolute z-50 nm-inset-$f-primary right-0 h-10 items-center flex my-1 py-2 px-1.5 border-l-0 rounded-r;
+      @apply absolute z-50 nm-flat-$f-primary right-0 h-10 items-center flex my-1 py-2 px-1.5 border-l-0 rounded-r-lg;
 
       &.invalid {
         @apply border-$f-error text-$f-error border-opacity-60;
@@ -111,7 +111,7 @@
     }
 
     .prepend-container {
-      @apply absolute z-50 nm-inset-$f-primary left-0 h-10 items-center flex my-1 py-2 px-1.5 border-r-0 rounded-l;
+      @apply absolute z-50 nm-flat-$f-primary left-0 h-10 items-center flex my-1 py-2 px-1.5 border-r-0 rounded-l-lg;
 
       &.invalid {
         @apply border-$f-error text-$f-error border-opacity-60;
