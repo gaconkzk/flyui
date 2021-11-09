@@ -3,10 +3,10 @@ import { router } from './router'
 import App from './App.vue'
 
 import 'virtual:windi.css'
-import './styles/index.scss'
-
 import Flyui from '@gaconkzk/flyui-vue3'
 import '@gaconkzk/flyui-vue3/css'
+
+import './styles/index.scss'
 
 const app = createApp(App)
 

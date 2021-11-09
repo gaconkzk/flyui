@@ -1,4 +1,4 @@
-@import '@gaconkzk/core/styles/variables';
+@import '@gaconkzk/core/styles/variables.scss';
 
 :root {
   --f-primary: #bababa;
@@ -10,3 +10,5 @@
   --f-error-dark: #7f1d1d;
   --f-scroll: #d6d6d6;
 }
+
+@import '@gaconkzk/core/styles/neumophism.scss';

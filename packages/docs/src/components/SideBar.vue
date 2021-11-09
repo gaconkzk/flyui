@@ -19,14 +19,14 @@ function toggle() {
 
 <template>
   <div
-    :class="`sidebar flat${display ? ' display' : ''}`"
+    :class="`sidebar flat ${display ? 'display' : ''}`"
     v-scrollable
     ref="sidebar"
   >
     <slot />
   </div>
   <button
-    :class="`halfshow${display ? ' display' : ''}`"
+    :class="`halfshow ${display ? 'display' : ''}`"
     @click="toggle"
     ref="toggleButton"
   >

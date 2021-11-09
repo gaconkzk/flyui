@@ -12,17 +12,13 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "exports": {
-    "./theme": {
-      "import": "./utils/theme.ts",
-      "require": "./utils/theme.ts"
+    "./*": {
+      "import": "./*",
+      "require": "./*"
     },
     "./utils/*": {
       "import": "./utils/*",
       "require": "./utils/*"
-    },
-    "./tw-nm": {
-      "import": "./tailwindcss-neumorphism.ts",
-      "require": "./tailwindcss-neumorphism.ts"
     },
     "./styles/*": {
       "import": "./styles/*",
