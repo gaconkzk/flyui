@@ -6,6 +6,9 @@ import FTextField from '@/components/FTextField/index.vue'
 import FSelect from '@/components/FSelect/index.vue'
 import FIcon from '@/components/FIcon/index.vue'
 
+import '@gaconkzk/core/styles/components/fscrollable.scss'
+import { FScrollable } from '@gaconkzk/core/utils/FScrollable'
+
 const components = {
   FButton,
   FDrawer,
@@ -31,10 +34,16 @@ function install(Vue: App) {
   // scrollable
   Vue.directive('scrollable', {
     beforeMount(el, binding, vnode) {
-      el.classList.add('overflow-y-auto')
-      if (binding?.value?.thin) {
-        el.classList.add(`scrollbar-thin`)
-      } else el.classList.add(`scrollbar`)
+      Object.defineProperty(el, 'data-f-scrollable', {
+        value: new FScrollable(el),
+        configurable: true,
+      })
+    },
+    beforeUnmount(el, binding, vnode) {
+      if (!Object.prototype.hasOwnProperty.call(el, 'data-f-scrollable')) return
+      const cnode: HTMLElement & { 'data-f-scrollable'?: FScrollable } = el
+      cnode['data-f-scrollable']?.unBind()
+      delete cnode['data-f-scrollable']
     },
   })
 }
@@ -44,7 +53,7 @@ export default {
 }
 
 // For named components usage
-export { theme, updateTheme, defaultTheme } from '@gaconkzk/core/theme'
+export { theme, updateTheme, defaultTheme } from '@gaconkzk/core/utils/theme'
 export { default as FButton } from '@/components/FButton'
 export { default as FDrawer } from '@/components/FDrawer'
 export { default as FIcon } from '@/components/FIcon'

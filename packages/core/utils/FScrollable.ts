@@ -122,8 +122,8 @@ export class FScrollable {
 
     if (_this.bar) {
       let right = isRtl
-        ? _this.target.clientWidth - _this.bar.clientWidth - 3
-        : (_this.target.clientWidth - _this.bar.clientWidth - 3) * -1
+        ? _this.target.clientWidth - _this.bar.clientWidth - 6
+        : (_this.target.clientWidth - _this.bar.clientWidth - 6) * -1
       raf(function () {
         //
         if (_this.bar) {

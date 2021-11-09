@@ -13,7 +13,7 @@ const scrollable = {
 </script>
 
 <template>
-  <div v-scrollable="scrollable" class="h-screen">
+  <div v-scrollable class="h-screen">
     <div>
       <section>
         <h5>Theme</h5>
@@ -113,7 +113,7 @@ const scrollable = {
       </section>
       <section>
         <h5>Select</h5>
-        <div class="flex flex-col justify-center">
+        <div class="flex flex-row justify-center">
           <div class="mx-4 w-3/4 md:w-4/9">
             <f-select
               label="Select value ..."
@@ -139,6 +139,19 @@ const scrollable = {
               message="ahihi"
             />
           </div>
+        </div>
+      </section>
+      <section>
+        <h5>Icons</h5>
+        <div class="flex flex-row justify-center gap-4">
+          <f-icon name="fly_logo" width="40px" height="40px" original />
+          <f-icon name="s_fly" width="40px" height="40px" original />
+          <f-icon
+            name="fly_filled"
+            width="40px"
+            height="40px"
+            class="!text-blue-500"
+          />
         </div>
       </section>
       <section>

@@ -13,7 +13,7 @@
 }
 
 html {
-  @apply text-$t-primary text-base  bg-$f-primary;
+  @apply text-$t-primary text-base  bg-$f-primary overflow-hidden;
 }
 body {
   position: relative;
