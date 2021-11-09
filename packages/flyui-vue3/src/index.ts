@@ -33,7 +33,7 @@ function install(Vue: App) {
 
   // scrollable
   Vue.directive('scrollable', {
-    beforeMount(el, binding, vnode) {
+    mounted(el, binding, vnode) {
       Object.defineProperty(el, 'data-f-scrollable', {
         value: new FScrollable(el),
         configurable: true,

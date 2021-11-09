@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite-plugin-windicss'
 
 import animations from '@windicss/plugin-animations'
-import { theme } from '@gaconkzk/flyui-vue3'
+import { theme } from '@gaconkzk/core/utils/theme'
 
 module.exports = defineConfig({
   darkMode: 'class',
