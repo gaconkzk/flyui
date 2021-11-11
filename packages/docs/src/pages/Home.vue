@@ -7,3 +7,9 @@ import Sidebar from '../components/SideBar.vue'
     <router-view />
   </div>
 </template>
+
+<style lang="scss" scoped>
+.page {
+  @apply h-screen w-full;
+}
+</style>

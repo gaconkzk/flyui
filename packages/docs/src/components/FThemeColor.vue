@@ -4,12 +4,12 @@
 
 <script lang="ts">
 import { watch, defineComponent, inject, ref, Ref } from 'vue'
-import { theme, updateTheme } from '@gaconkzk/flyui-vue3'
+import { theme, updateTheme, currentTheme } from '@gaconkzk/flyui-vue3'
 
 export default defineComponent({
   name: 'FThemeColor',
   setup(props) {
-    const themeColor = ref(theme.colors.prim[2])
+    const themeColor = ref(currentTheme())
 
     function handleInput(e: any) {
       themeColor.value = e.target.value

@@ -54,3 +54,8 @@ export const updateTheme = (primaryColor: string) => {
 export const defaultTheme = () => {
   updateTheme(theme.colors.prim[2])
 }
+
+export const currentTheme = (): string => {
+  const rootStyle = getComputedStyle(document.documentElement)
+  return rootStyle.getPropertyValue('--f-primary')
+}

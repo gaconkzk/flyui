@@ -52,7 +52,12 @@ export default {
 }
 
 // For named components usage
-export { theme, updateTheme, defaultTheme } from '@gaconkzk/core/utils/theme'
+export {
+  theme,
+  updateTheme,
+  defaultTheme,
+  currentTheme,
+} from '@gaconkzk/core/utils/theme'
 export { default as FButton } from '@/components/FButton'
 export { default as FDrawer } from '@/components/FDrawer'
 export { default as FIcon } from '@/components/FIcon'
