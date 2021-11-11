@@ -19,6 +19,7 @@ export const theme = {
     prim: {
       1: colors.gray[200],
       2: colors.gray[200],
+      '2-selected': colors.green[700],
     },
   },
 }

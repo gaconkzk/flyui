@@ -1,0 +1,116 @@
+.f-select-form {
+  @apply w-full focus:outline-none;
+
+  .f-select {
+    @apply appearance-none mt-2 flex flex-col flex-wrap relative text-left outline-none border-charcoal;
+
+    .f-select-group {
+      @apply w-full flex flex-row items-stretch rounded-lg;
+      &:hover,
+      &:focus {
+        &.invalid:not(.disabled):not(.read-only) {
+          border: 1px solid red;
+        }
+      }
+
+      .selected {
+        @apply relative items-center flex-grow px-4 flex-grow nm-inset-$f-primary border-charcoal cursor-pointer rounded-lg h-10;
+
+        .display-selected {
+          @apply truncate;
+        }
+        &.read-only {
+          cursor: pointer;
+        }
+
+        &.disabled,
+        &.disabled:focus,
+        &.disabled:hover {
+          @apply bg-opacity-20 text-opacity-40 cursor-not-allowed opacity-60;
+        }
+
+        &.invalid,
+        &.invalid:focus,
+        &.invalid:hover {
+          @apply border-red-700 border-opacity-60;
+        }
+
+        &.append {
+          @apply mr-28px rounded-tr-none rounded-br-none border-r-0;
+        }
+
+        &.prepend {
+          @apply ml-28px rounded-tl-none rounded-bl-none border-l-0;
+        }
+      }
+
+      .append-container {
+        @apply absolute right-0 h-10 items-center flex py-2 px-1.5 border-$f-primary-lighter border-1 border-l-0 rounded-r-lg;
+
+        &.invalid {
+          @apply text-$f-error border-opacity-60 border-$f-error border-l-0;
+        }
+
+        &.disabled {
+          @apply cursor-not-allowed;
+        }
+      }
+
+      .prepend-container {
+        @apply absolute left-0 h-10 items-center flex py-2 px-1.5 border-$f-primary-lighter border-1 border-r-0 rounded-l-lg;
+
+        &.invalid {
+          @apply text-$f-error border-opacity-60 border-$f-error border-r-0;
+        }
+
+        &.disabled {
+          @apply cursor-not-allowed;
+        }
+      }
+    }
+
+    .items {
+      @apply nm-flat-$f-primary border-red-200 border-solid absolute left-0 right-0 top-11 min-h-40 h-60 max-h-80 w-full rounded-lg rounded-t-none py-4 my-2;
+
+      z-index: 1000;
+
+      .wrapper {
+        @apply h-full ml-2 mr-4;
+
+        div {
+          @apply truncate p-2 m-2 rounded-lg text-t-primary cursor-pointer select-none duration-100;
+
+          transition-duration: 0.2s;
+          transition-property: color;
+          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+          &.selected {
+            @apply nm-inset-$f-primary text-$f-selected bg-opacity-70;
+          }
+
+          &.default {
+            @apply italic cursor-not-allowed;
+          }
+
+          &:hover {
+            @apply bg-$f-primary-lighter text-t-primary-actived;
+            &.selected {
+              @apply text-selected bg-opacity-70;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .selectHide {
+    @apply hidden;
+  }
+
+  .f-invalid {
+    @apply text-t-error text-xs mx-1;
+    &.error-message {
+      @apply absolute -bottom-4 left-1;
+    }
+  }
+}

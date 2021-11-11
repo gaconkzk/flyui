@@ -2,7 +2,7 @@ import { defineConfig } from 'vite-plugin-windicss'
 import animations from '@windicss/plugin-animations'
 
 import neumorphism from './tailwindcss-neumorphism'
-import { theme } from './src/utils/theme'
+import { theme } from '@gaconkzk/core/utils/theme'
 
 // testing debug
 // import { Processor } from 'windicss/lib'

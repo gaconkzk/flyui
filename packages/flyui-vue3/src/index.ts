@@ -6,7 +6,6 @@ import FTextField from '@/components/FTextField/index.vue'
 import FSelect from '@/components/FSelect/index.vue'
 import FIcon from '@/components/FIcon/index.vue'
 
-import '@gaconkzk/core/styles/components/fscrollable.scss'
 import { FScrollable } from '@gaconkzk/core/utils/FScrollable'
 
 const components = {
@@ -18,6 +17,13 @@ const components = {
 }
 
 import 'virtual:windi.css'
+
+import '@gaconkzk/core/styles/variables.scss'
+import '@gaconkzk/core/styles/neumophism.scss'
+
+// scrollable - auto import
+import '@gaconkzk/core/styles/components/fscrollable.scss'
+
 import { App } from 'vue'
 
 // Use full install all declared components

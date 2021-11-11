@@ -2,14 +2,6 @@
 import { ref } from 'vue'
 import FThemeColor from './FThemeColor.vue'
 const toggleDrawer = ref<boolean>(false)
-
-const scrollable = {
-  thin: true,
-  scrollClasses: [
-    '!scrollbar-track-prim-2',
-    '!scrollbar-thumb-prim-2-highlight',
-  ],
-}
 </script>
 
 <template>
@@ -132,26 +124,7 @@ const scrollable = {
               ]"
               :selected="'vue3'"
             />
-            <f-text-field
-              label="Text field read only"
-              read-only
-              required
-              message="ahihi"
-            />
           </div>
-        </div>
-      </section>
-      <section>
-        <h5>Icons</h5>
-        <div class="flex flex-row justify-center gap-4">
-          <f-icon name="fly_logo" width="40px" height="40px" original />
-          <f-icon name="s_fly" width="40px" height="40px" original />
-          <f-icon
-            name="fly_filled"
-            width="40px"
-            height="40px"
-            class="!text-blue-500"
-          />
         </div>
       </section>
       <section>
@@ -172,5 +145,5 @@ const scrollable = {
 </template>
 
 <style lang="scss">
-@import '@gaconkzk/core/styles/variables';
+@import '@gaconkzk/core/styles/variables.scss';
 </style>

@@ -7,11 +7,6 @@
   &.flat {
     @apply nm-flat-$f-primary;
 
-    // keep same for mobile
-    &:hover {
-      @apply nm-flat-$f-primary;
-    }
-
     &.activated,
     &:active {
       @apply nm-inset-$f-primary;
@@ -20,6 +15,7 @@
 
   &.convex {
     @apply nm-convex-$f-primary;
+
     &.activated,
     &:active {
       @apply nm-concave-$f-primary;
@@ -44,5 +40,8 @@
 @media (hover: hover) and (pointer: fine) {
   .button.flat:hover {
     @apply nm-inset-$f-primary;
+  }
+  .button.convex:hover {
+    @apply nm-concave-$f-primary;
   }
 }

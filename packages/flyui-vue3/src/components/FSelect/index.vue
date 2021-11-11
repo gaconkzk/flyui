@@ -37,7 +37,7 @@
       <div
         v-if="!disabled && !readOnly"
         ref="itemsContainer"
-        class="items w-full ss-container"
+        class="items w-full"
         :class="{
           selectHide: !delayOpen,
           'xyz-in': open,
@@ -45,7 +45,7 @@
         }"
         xyz="flip-down origin-top"
       >
-        <div class="wrapper">
+        <div class="wrapper ss-container">
           <div v-if="!!placeholder" class="default">
             {{ placeholder || 'Choose ...' }}
           </div>
@@ -86,6 +86,7 @@ import {
   onBeforeUnmount,
 } from 'vue'
 import { SelectType } from '../../@types/forms/select'
+import '@gaconkzk/core/styles/components/fselect.scss'
 
 export default defineComponent({
   name: 'FSelect',
@@ -221,133 +222,3 @@ export default defineComponent({
   },
 })
 </script>
-
-<style lang="scss" scoped>
-.f-select-form {
-  @apply w-full focus:outline-none;
-
-  .f-select {
-    @apply appearance-none mt-2 flex flex-col flex-wrap relative text-left outline-none border-charcoal;
-
-    .f-select-group {
-      @apply w-full flex flex-row items-stretch rounded-lg;
-
-      border: 1px solid var(--f-primary-lighter);
-
-      &:hover,
-      &:focus {
-        &:not(.invalid) {
-          border: 1px solid var(--f-primary-highlight);
-        }
-        &.invalid:not(.disabled):not(.read-only) {
-          border: 1px solid red;
-        }
-      }
-
-      .selected {
-        @apply relative items-center flex-grow px-4 flex-grow nm-inset-$f-primary border-charcoal cursor-pointer rounded-lg h-10;
-
-        .display-selected {
-          @apply truncate;
-        }
-        &.read-only {
-          cursor: pointer;
-        }
-
-        &.disabled,
-        &.disabled:focus,
-        &.disabled:hover {
-          @apply bg-opacity-20 text-opacity-40 cursor-not-allowed opacity-60;
-        }
-
-        &.invalid,
-        &.invalid:focus,
-        &.invalid:hover {
-          @apply border-red-700 border-opacity-60;
-        }
-
-        &.append {
-          @apply rounded-tr-none rounded-br-none border-r-0;
-        }
-
-        &.prepend {
-          @apply rounded-tl-none rounded-bl-none border-l-0;
-        }
-      }
-
-      .append-container {
-        @apply h-10 flex items-center px-2 border-l-0 border-r border-t border-b border-solid rounded-r-lg;
-        border: 1px solid var(--f-primary-lighter);
-        &.invalid {
-          @apply border-red-700 text-red-500 border-opacity-60;
-        }
-
-        &.disabled {
-          @apply cursor-not-allowed;
-        }
-        .chevron-up {
-          transform: rotate(180deg);
-        }
-      }
-
-      .prepend-container {
-        @apply h-10 flex flex items-center px-2 border-r-0 border-l border-t border-b border-solid rounded-l-lg;
-
-        border: 1px solid var(--f-primary-lighter);
-
-        &.invalid {
-          @apply border-red-700 text-red-500 border-opacity-60;
-        }
-
-        &.disabled {
-          @apply cursor-not-allowed;
-        }
-      }
-    }
-
-    .items {
-      @apply nm-flat-$f-primary border-red-200 border-solid absolute left-0 right-0 top-11 min-h-40 h-60 max-h-80 w-full rounded-lg rounded-t-none px-2 py-2 my-2;
-
-      z-index: 1000;
-
-      .wrapper {
-        @apply h-full;
-
-        div {
-          @apply nm-flat-$f-primary truncate p-2 m-2 rounded-lg text-t-primary cursor-pointer select-none duration-100;
-
-          transition-duration: 0.2s;
-          transition-property: color;
-          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-
-          &.selected {
-            @apply nm-inset-$f-primary text-brand bg-opacity-70;
-          }
-
-          &.default {
-            @apply border-2 border-transparent border-solid;
-          }
-
-          &:hover {
-            @apply nm-inset-$f-primary text-t-primary-actived;
-            &.selected {
-              @apply text-brand bg-opacity-70;
-            }
-          }
-        }
-      }
-    }
-  }
-
-  .selectHide {
-    @apply hidden;
-  }
-
-  .f-invalid {
-    @apply text-t-error text-xs mx-1;
-    &.error-message {
-      @apply absolute -bottom-4 left-1;
-    }
-  }
-}
-</style>
