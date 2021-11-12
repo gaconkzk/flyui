@@ -30,7 +30,7 @@ function toggle() {
     @click="toggle"
     ref="toggleButton"
   >
-    X
+    <fe-close />
   </button>
 </template>
 
@@ -45,38 +45,33 @@ function toggle() {
 }
 
 .halfshow {
-  @apply outline-none fixed -left-4 top-4 rounded-full w-8 h-8 pb-1 lg:(hidden);
+  @apply outline-none fixed -left-2 top-4 rounded-full w-10 h-8 lg:(hidden) flex justify-center items-center z-1000;
 
   &:focus {
     @apply outline-none;
   }
 
   &::before {
-    @apply -z-1 rounded-full  outline-none;
+    @apply -z-1 rounded-r-full outline-none w-10 -l-2;
     position: absolute;
     top: 0;
-    left: 0;
     display: inline-block;
     content: '';
-    width: 100%;
     height: 100%;
     border: 1px solid var(--f-primary-lighter);
     background: var(--f-primary);
-    box-shadow: 0.2em 0.2em calc(0.2em * 2) var(--f-primary-shadow),
-      calc(-0.2em) calc(-0.2em) calc(0.2em * 2) var(--f-primary-highlight);
+    box-shadow: 0.2em 0.2em calc(0.2em * 2) var(--f-primary-shadow);
   }
   &::after {
-    @apply -z-1 outline-none w-5 h-10;
+    @apply -z-1 outline-none w-20px h-30px top-1px -left-16px;
     position: absolute;
-    top: -0.5rem;
-    left: -0.5rem;
     display: inline-block;
     content: '';
     background: var(--f-primary);
   }
 
   &.display {
-    @apply z-999 transition-transform transform translate-x-64;
+    @apply z-999 transition-transform transform translate-x-66;
   }
 }
 </style>
