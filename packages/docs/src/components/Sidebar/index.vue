@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { onClickOutside } from '@vueuse/core'
+import FlyUIBrand from '../FlyUIBrand.vue'
 
 const sidebar = ref(null)
 const toggleButton = ref(null)
@@ -23,7 +24,10 @@ function toggle() {
     v-scrollable
     ref="sidebar"
   >
-    <slot />
+    <div class="flex flex-col justify-center items-center">
+      <FlyUIBrand class="w-full" />
+      <brandico-github class="ghi" />
+    </div>
   </div>
   <button
     :class="`halfshow ${display ? 'display' : ''}`"
@@ -41,6 +45,13 @@ function toggle() {
   min-height: -webkit-fill-available;
   &.display {
     @apply transition-transform transform translate-x-64;
+  }
+
+  .ghi {
+    @apply text-$t-primary opacity-50;
+    &:hover {
+      @apply opacity-100 cursor-pointer;
+    }
   }
 }
 

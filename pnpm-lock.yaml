@@ -19,6 +19,7 @@ importers:
     specifiers:
       '@gaconkzk/core': workspace:*
       '@gaconkzk/flyui-vue3': workspace:*
+      '@iconify-json/brandico': ^1.0.1
       '@iconify-json/fe': ^1.0.1
       '@types/color': ^3.0.2
       '@types/node': ^16.11.1
@@ -45,6 +46,7 @@ importers:
       vue: 3.2.20
       vue-router: 4.0.12_vue@3.2.20
     devDependencies:
+      '@iconify-json/brandico': 1.0.1
       '@iconify-json/fe': 1.0.1
       '@types/color': 3.0.2
       '@types/node': 16.11.1
@@ -483,6 +485,12 @@ packages:
 
   /@emmetio/scanner/1.0.0:
     resolution: {integrity: sha512-8HqW8EVqjnCmWXVpqAOZf+EGESdkR27odcMMMGefgKXtar00SoYNSryGv//TELI4T3QFsECo78p+0lmalk/CFA==}
+    dev: true
+
+  /@iconify-json/brandico/1.0.1:
+    resolution: {integrity: sha512-daQWiUM8RmE779MZccel3KktshCJ6+AUta1i1VBu6vvd7mnXSWqu8P1Wq1AW2Xgv22Tb+OM4Q4nBQAfUE2bHlQ==}
+    dependencies:
+      '@iconify/types': 1.0.10
     dev: true
 
   /@iconify-json/fe/1.0.1:
