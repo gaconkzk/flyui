@@ -3,9 +3,64 @@ import { ref } from 'vue'
 import { onClickOutside } from '@vueuse/core'
 import FlyUIBrand from '../FlyUIBrand.vue'
 
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
+
 const sidebar = ref(null)
 const toggleButton = ref(null)
 const display = ref(false)
+
+console.log(route.path)
+
+const menuItems = [
+  {
+    type: 'main-item',
+    label: 'General',
+  },
+  {
+    type: 'item',
+    label: 'Introduction',
+    href: '/',
+    icon: 'mdi:human-handsup',
+  },
+  {
+    type: 'item',
+    label: 'Getting started',
+    href: '/getting-started',
+    icon: 'fe:beginner',
+  },
+  {
+    type: 'main-item',
+    label: 'Components',
+  },
+  {
+    type: 'sub-item',
+    label: 'Base',
+  },
+  {
+    type: 'item',
+    label: 'Button',
+    href: '/button',
+    icon: 'dashicons:button',
+  },
+  {
+    type: 'item',
+    label: 'Icon',
+    href: '/icon',
+    icon: 'mdi:simple-icons',
+  },
+  {
+    type: 'sub-item',
+    label: 'Form',
+  },
+  {
+    type: 'item',
+    label: 'Checkbox',
+    href: '/checkbox',
+    icon: 'ci:checkbox-checked',
+  },
+]
 
 onClickOutside(sidebar, (e) => {
   if (display.value && e.target !== toggleButton.value) {
@@ -16,6 +71,8 @@ onClickOutside(sidebar, (e) => {
 function toggle() {
   display.value = !display.value
 }
+
+const current = '/'
 </script>
 
 <template>
@@ -28,15 +85,13 @@ function toggle() {
     </div>
     <div class="flex-grow" v-scrollable>
       <ul class="flex flex-col justify-start items-start">
-        <li class="main-item">General</li>
-        <li class="item actived"><mdi-human-handsup /> Introduction</li>
-        <li class="item"><fe-beginner /> Getting started</li>
-        <li class="main-item">Components</li>
-        <li class="sub-item">Base</li>
-        <li class="item"><dashicons-button />Button</li>
-        <li class="item"><mdi-simple-icons />Icon</li>
-        <li class="sub-item">Form</li>
-        <li class="item"><ci-checkbox-checked />Checkbox</li>
+        <li
+          v-for="item in menuItems"
+          :class="`${item.type} ${current === item.href ? 'actived' : ''}`"
+        >
+          <i v-if="item.icon" class="iconify" :data-icon="item.icon" />
+          {{ item.label }}
+        </li>
       </ul>
     </div>
   </div>
@@ -67,14 +122,14 @@ function toggle() {
         @apply text-lg ml-2 mt-3 uppercase;
       }
       &.item {
-        @apply flex flex-row items-center gap-2 text-md opacity-70 pl-4 py-2 cursor-pointer;
+        @apply flex flex-row items-center gap-2 text-md opacity-70 pl-4 py-2;
 
         &:hover:not(.actived) {
-          @apply opacity-100 transition-transform transform translate-x-4;
+          @apply opacity-100 transition-transform transform translate-x-4 cursor-pointer;
         }
 
         &.actived {
-          @apply opacity-100 pl-8;
+          @apply opacity-100 pl-8 text-$f-selected;
         }
         svg {
           @apply w-6 h-6;

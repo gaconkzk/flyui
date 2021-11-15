@@ -8,6 +8,8 @@ import '@gaconkzk/flyui-vue3/css'
 
 import './styles/index.scss'
 
+import '@purge-icons/generated'
+
 const app = createApp(App)
 
 app.use(Flyui)
