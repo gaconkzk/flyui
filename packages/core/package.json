@@ -30,6 +30,6 @@
   "devDependencies": {
     "color": "^4.0.1",
     "windicss": "^3.1.9",
-    "vite": "^2.6.11"
+    "vite": "^2.6.14"
   }
 }
