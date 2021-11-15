@@ -26,27 +26,27 @@
     "serve": "vite preview"
   },
   "dependencies": {
+    "@gaconkzk/core": "workspace:*",
     "@windicss/plugin-scrollbar": "^1.2.3",
     "color": "^4.0.1",
     "lodash": "^4.17.21",
-    "vue": "^3.2.20",
-    "@gaconkzk/core": "workspace:*"
+    "vue": "^3.2.21"
   },
   "devDependencies": {
     "@types/color": "^3.0.2",
-    "@types/lodash": "^4.14.175",
-    "@types/node": "^16.11.0",
-    "@vitejs/plugin-vue": "^1.9.3",
+    "@types/lodash": "^4.14.176",
+    "@types/node": "^16.11.7",
+    "@vitejs/plugin-vue": "^1.9.4",
     "@windicss/plugin-animations": "^1.0.9",
     "@yzfe/svgicon": "^1.1.0",
     "@yzfe/vue3-svgicon": "^1.0.1",
-    "sass": "^1.43.2",
+    "sass": "^1.43.4",
     "typescript": "^4.4.4",
-    "vite": "^2.6.7",
+    "vite": "^2.6.14",
     "vite-plugin-svg-icons": "^1.0.5",
     "vite-plugin-svgicon": "^1.0.0",
-    "vite-plugin-windicss": "^1.4.11",
-    "vue-tsc": "^0.28.6",
-    "windicss": "^3.1.9"
+    "vite-plugin-windicss": "^1.5.1",
+    "vue-tsc": "^0.28.10",
+    "windicss": "^3.2.1"
   }
 }
