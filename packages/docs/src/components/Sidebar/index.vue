@@ -29,7 +29,7 @@ function toggle() {
     <div class="flex-grow" v-scrollable>
       <ul class="flex flex-col justify-start items-start">
         <li class="main-item">General</li>
-        <li class="item"><mdi-human-handsup /> Introduction</li>
+        <li class="item actived"><mdi-human-handsup /> Introduction</li>
         <li class="item"><fe-beginner /> Getting started</li>
         <li class="main-item">Components</li>
         <li class="sub-item">Base</li>
@@ -67,7 +67,15 @@ function toggle() {
         @apply text-lg ml-2 mt-3 uppercase;
       }
       &.item {
-        @apply flex flex-row items-center gap-2 text-md opacity-50 pl-4 py-2 cursor-pointer hover:(opacity-100 transition-transform transform translate-x-4);
+        @apply flex flex-row items-center gap-2 text-md opacity-70 pl-4 py-2 cursor-pointer;
+
+        &:hover:not(.actived) {
+          @apply opacity-100 transition-transform transform translate-x-4;
+        }
+
+        &.actived {
+          @apply opacity-100 pl-8;
+        }
         svg {
           @apply w-6 h-6;
         }
