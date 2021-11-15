@@ -17,6 +17,7 @@
   "devDependencies": {
     "@iconify-json/brandico": "^1.0.1",
     "@iconify-json/fe": "^1.0.1",
+    "@iconify-json/mdi": "^1.0.1",
     "@types/color": "^3.0.2",
     "@types/node": "^16.11.1",
     "@vitejs/plugin-vue": "^1.9.3",

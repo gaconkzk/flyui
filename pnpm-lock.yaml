@@ -21,6 +21,7 @@ importers:
       '@gaconkzk/flyui-vue3': workspace:*
       '@iconify-json/brandico': ^1.0.1
       '@iconify-json/fe': ^1.0.1
+      '@iconify-json/mdi': ^1.0.1
       '@types/color': ^3.0.2
       '@types/node': ^16.11.1
       '@vitejs/plugin-vue': ^1.9.3
@@ -48,6 +49,7 @@ importers:
     devDependencies:
       '@iconify-json/brandico': 1.0.1
       '@iconify-json/fe': 1.0.1
+      '@iconify-json/mdi': 1.0.9
       '@types/color': 3.0.2
       '@types/node': 16.11.1
       '@vitejs/plugin-vue': 1.9.3_vite@2.6.7
@@ -495,6 +497,12 @@ packages:
 
   /@iconify-json/fe/1.0.1:
     resolution: {integrity: sha512-JF4l0GWm8DNsdMDtl3+W+vFKApcw+RIW/P1DfBhdoQmqSOImb9ygxXBaGu6wAmr+BRnVrwQbCzrUxDO7GzJoWQ==}
+    dependencies:
+      '@iconify/types': 1.0.10
+    dev: true
+
+  /@iconify-json/mdi/1.0.9:
+    resolution: {integrity: sha512-Cpz/SJZquFfizhbRGLLe7L/Iz5LYcfzynWp10SR7HtzrpVXx8bvngl4d+QS9AA7ITLq4742xhjsNJdfOsmOnFQ==}
     dependencies:
       '@iconify/types': 1.0.10
     dev: true
@@ -3726,7 +3734,7 @@ packages:
       '@windicss/plugin-utils': 1.4.11
       chalk: 4.1.2
       debug: 4.3.2
-      vite: 2.6.7_sass@1.43.2
+      vite: 2.6.7
       windicss: 3.1.9
     transitivePeerDependencies:
       - supports-color

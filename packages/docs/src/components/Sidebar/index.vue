@@ -20,13 +20,24 @@ function toggle() {
 
 <template>
   <div
-    :class="`sidebar flat ${display ? 'display' : ''}`"
-    v-scrollable
+    :class="`sidebar flex flex-col flat ${display ? 'display' : ''}`"
     ref="sidebar"
   >
-    <div class="flex flex-col justify-center items-center">
+    <div class="flex flex-col justify-center items-center shadow-md h-30">
       <FlyUIBrand class="w-full" />
-      <brandico-github class="ghi" />
+    </div>
+    <div class="flex-grow" v-scrollable>
+      <ul class="flex flex-col justify-start items-start">
+        <li class="main-item">General</li>
+        <li class="item"><mdi-human-handsup /> Introduction</li>
+        <li class="item"><fe-beginner /> Getting started</li>
+        <li class="main-item">Components</li>
+        <li class="sub-item">Base</li>
+        <li class="item"><dashicons-button />Button</li>
+        <li class="item"><mdi-simple-icons />Icon</li>
+        <li class="sub-item">Form</li>
+        <li class="item"><ci-checkbox-checked />Checkbox</li>
+      </ul>
     </div>
   </div>
   <button
@@ -47,10 +58,20 @@ function toggle() {
     @apply transition-transform transform translate-x-64;
   }
 
-  .ghi {
-    @apply text-$t-primary opacity-50;
-    &:hover {
-      @apply opacity-100 cursor-pointer;
+  ul {
+    li {
+      &.main-item {
+        @apply text-xl ml-2 mt-4 uppercase;
+      }
+      &.sub-item {
+        @apply text-lg ml-2 mt-3 uppercase;
+      }
+      &.item {
+        @apply flex flex-row items-center gap-2 text-md opacity-50 pl-4 py-2 cursor-pointer hover:(opacity-100 transition-transform transform translate-x-4);
+        svg {
+          @apply w-6 h-6;
+        }
+      }
     }
   }
 }
