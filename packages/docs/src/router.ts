@@ -1,4 +1,4 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 import Pages from './pages/index'
 
 const routes = [
@@ -19,7 +19,7 @@ const routes = [
 ]
 
 export const router = createRouter({
-  history: createWebHashHistory('flyui'),
+  history: createWebHistory('/flyui/'),
   routes,
   scrollBehavior() {
     return { left: 0, top: 0 }
