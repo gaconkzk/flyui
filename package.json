@@ -9,7 +9,7 @@
     "dev:react": "pnpm run dev --filter=\"@gaconkzk/flyui-react\"",
     "dev:docs": "pnpm run build --filter=\"@gaconkzk/flyui-vue3\" && pnpm run dev --filter=\"docs\"",
     "build": "pnpm build --filter=\"@gaconkzk/flyui-vue3\" --filter=\"@gaconkzk/flyui-react\" --filter=\"@gaconkzk/flyui-svelte\"",
-    "build:docs": "pnpm build --filter=\"docs\" && cp docs/index.html docs/404.html",
+    "build:docs": "pnpm build --filter=\"docs\"",
     "build:vue3": "pnpm build --filter=\"@gaconkzk/flyui-vue3\"",
     "build:react": "pnpm build --filter=\"@gaconkzk/flyui-react\"",
     "build:svelte": "pnpm build --filter=\"@gaconkzk/flyui-svelte\"",
