@@ -10,6 +10,10 @@ const routes = [
         path: '',
         component: Pages.Landing,
       },
+      {
+        path: 'intro',
+        component: Pages.Introduction,
+      },
     ],
   },
 ]

@@ -28,22 +28,34 @@ const flattenColorPalette = function (colors) {
   return result
 }
 
+const shadowColor = (color) =>
+  Color(color).isDark()
+    ? Color(color).darken(0.25).hex()
+    : Color(color).darken(0.15).hex()
+
+const highlightColor = (color) =>
+  Color(color).isLight()
+    ? Color(color).lighten(0.1).hex()
+    : Color(color).lighten(0.15).hex()
+
+const shadowGradient = (color) =>
+  Color(color).isDark()
+    ? Color(color).darken(0.1).hex()
+    : Color(color).darken(0.05).hex()
+
+const highlightGradient = (color) =>
+  Color(color).isLight()
+    ? Color(color).lighten(0.1).hex()
+    : Color(color).lighten(0.05).hex()
+
 const generateShades = (color) => {
   try {
     return {
       baseColor: Color(color).hex(),
-      shadowColor: Color(color).isDark()
-        ? Color(color).darken(0.45).hex()
-        : Color(color).darken(0.25).hex(),
-      highlightColor: Color(color).isLight()
-        ? Color(color).lighten(0.2).hex()
-        : Color(color).lighten(0.35).hex(),
-      shadowGradient: Color(color).isDark()
-        ? Color(color).darken(0.2).hex()
-        : Color(color).darken(0.15).hex(),
-      highlightGradient: Color(color).isLight()
-        ? Color(color).lighten(0.1).hex()
-        : Color(color).lighten(0.05).hex(),
+      shadowColor: shadowColor(color),
+      highlightColor: highlightColor(color),
+      shadowGradient: shadowGradient(color),
+      highlightGradient: highlightGradient(color),
     }
   } catch (err) {
     console.error(err)

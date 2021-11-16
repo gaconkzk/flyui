@@ -3,15 +3,14 @@ import { ref } from 'vue'
 import { onClickOutside } from '@vueuse/core'
 import FlyUIBrand from '../FlyUIBrand.vue'
 
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 
 const route = useRoute()
+const router = useRouter()
 
 const sidebar = ref(null)
 const toggleButton = ref(null)
 const display = ref(false)
-
-console.log(route.path)
 
 const menuItems = [
   {
@@ -21,7 +20,7 @@ const menuItems = [
   {
     type: 'item',
     label: 'Introduction',
-    href: '/',
+    href: '/intro',
     icon: 'mdi:human-handsup',
   },
   {
@@ -71,8 +70,6 @@ onClickOutside(sidebar, (e) => {
 function toggle() {
   display.value = !display.value
 }
-
-const current = '/'
 </script>
 
 <template>
@@ -81,13 +78,14 @@ const current = '/'
     ref="sidebar"
   >
     <div class="flex flex-col justify-center items-center shadow-md h-30">
-      <FlyUIBrand class="w-full" />
+      <FlyUIBrand class="w-full" @click="router.push('/')" />
     </div>
     <div class="flex-grow" v-scrollable>
       <ul class="flex flex-col justify-start items-start">
         <li
           v-for="item in menuItems"
-          :class="`${item.type} ${current === item.href ? 'actived' : ''}`"
+          :class="`${item.type} ${route.path === item.href ? 'actived' : ''}`"
+          @click="() => item.href && router.push(item.href)"
         >
           <i v-if="item.icon" class="iconify" :data-icon="item.icon" />
           {{ item.label }}
@@ -129,7 +127,7 @@ const current = '/'
         }
 
         &.actived {
-          @apply opacity-100 pl-8 text-$f-selected;
+          @apply opacity-100 pl-4 text-$f-selected;
         }
         svg {
           @apply w-6 h-6;

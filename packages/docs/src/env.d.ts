@@ -1,4 +1,6 @@
 /// <reference types="vite/client" />
+/// <reference types="vue" />
+
 declare module '@gaconkzk/flyui-vue3'
 
 declare module '*.vue' {

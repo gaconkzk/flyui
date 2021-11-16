@@ -1,141 +1,62 @@
-<script setup lang="ts">
-import { provide, ref } from 'vue'
-import FThemeColor from '../../components/FThemeColor.vue'
-
-const toggleDrawer = ref<boolean>(false)
-</script>
-
 <template>
   <div>
-    <section>
-      <h5>Theme</h5>
-      <f-theme-color />
-    </section>
-    <section>
-      <h5>Buttons</h5>
-      <f-button>Primary</f-button>
-    </section>
-    <section>
-      <h5>Modals</h5>
-      <f-button rounded nm-type="convex" @click="toggleDrawer = !toggleDrawer"
-        >show</f-button
-      >
-      <f-drawer
-        :show="toggleDrawer"
-        :toggle="() => (toggleDrawer = !toggleDrawer)"
-        bg-drawer="w-60 top-1/2 left-1/2 p-4 rounded-lg transform -translate-x-1/2 -translate-y-1/2"
-        position="fixed"
-      >
-        drawer body hello world confluence hello
-      </f-drawer>
-    </section>
-    <section>
-      <h5>Icons</h5>
-      <div class="flex flex-row justify-center gap-4">
-        <f-icon name="fly_logo" width="40px" height="40px" original />
-        <f-icon name="s_fly" width="40px" height="40px" original />
-        <f-icon
-          name="fly_filled"
-          width="40px"
-          height="40px"
-          class="!text-$f-primary-shadow"
-        />
+    <div
+      class="
+        flex flex-col
+        justify-start
+        items-start
+        pt-10
+        pl-20
+        pb-10
+        shadow-md
+      "
+    >
+      <section>
+        <f-icon name="fly_logo" width="120px" height="120px" original />
+      </section>
+      <p class="pt-8 text-lg">
+        <strong>FlyUI</strong> – open-source components system for your next
+        project based on TypeScript
+      </p>
+      <div class="flex flex-row justify-center gap-4 pt-4">
+        <f-button>Get started</f-button>
+        <a
+          class="
+            convex
+            rounded-full
+            w-20
+            flex
+            justify-center
+            items-center
+            cursor-pointer
+            hover:nm-concave-$f-primary
+          "
+          href="https://github.com/gaconkzk/flyui"
+          target="_blank"
+        >
+          <fe-github /> Github
+        </a>
       </div>
-    </section>
-    <section>
-      <h5>Select</h5>
-      <div class="flex flex-col justify-center mx-4">
-        <f-select
-          label="Select value ..."
-          placeholder="select ..."
-          :options="[
-            'Some quick example text to build on the card title and make up the bulk of the cards content.',
-            'vue3',
-            'Fly UI',
-            'Select field',
-            'Input field',
-            'style morphism',
-            'style new morphism',
-            'theme dark',
-            'default',
-          ]"
-          :selected="'Some quick example text to build on the card title and make up the bulk of the cards content.'"
-        />
-      </div>
-    </section>
-    <section>
-      <h5>Text Field</h5>
-      <div class="flex justify-center mx-4">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <f-text-field label="Hello world" />
-          <f-text-field label="Hello world" required message="ahihi" />
-          <f-text-field
-            label="Text field disabled"
-            disabled
-            required
-            message="ahihi"
-            value="ahihi"
-          />
-          <f-text-field
-            label="Text field read only"
-            read-only
-            required
-            message="ahihi"
-          />
-          <f-text-field label="Append Icon">
-            <template #append>
-              <f-icon
-                name="fly_filled"
-                width="15px"
-                height="15px"
-                class="!text-blue-500"
-              />
-            </template>
-          </f-text-field>
-          <f-text-field label="prepend Icon">
-            <template #prepend>
-              <f-icon
-                name="fly_filled"
-                width="15px"
-                height="15px"
-                class="!text-blue-500"
-              />
-            </template>
-          </f-text-field>
-          <f-text-field label="prepend Icon" invalid message="invalid!">
-            <template #prepend>
-              <f-icon
-                name="fly_filled"
-                width="15px"
-                height="15px"
-                class="!text-blue-500"
-              />
-            </template>
-          </f-text-field>
-          <f-text-field
-            label="prepend Icon and append icon - invalid"
-            invalid
-            message="invalid!"
-          >
-            <template #prepend>
-              <f-icon
-                name="fly_filled"
-                width="15px"
-                height="15px"
-                class="!text-blue-500"
-              />
-            </template>
-            <template #append>
-              <f-icon
-                name="fly_filled"
-                width="15px"
-                height="15px"
-                class="!text-blue-500"
-              />
-            </template>
-          </f-text-field>
+    </div>
+    <div class="flex flex-col justify-start items-start pl-20">
+      <section>
+        <h4>Colors</h4>
+      </section>
+      <section>
+        <h4>Typography</h4>
+      </section>
+      <section class="flex flex-col items-start w-full flex-grow-1">
+        <h4>Components</h4>
+        <h5>Base</h5>
+        <div class="inline-grid grid-cols-3 gap-4 w-full pt-3 pb-2">
+          <div class="flat h-30 rounded-lg p-3">button</div>
+          <div class="flat h-30 rounded-lg p-3">icon</div>
         </div>
-      </div>
-    </section>
+        <h5>Form</h5>
+        <div class="inline-grid grid-cols-3 gap-4 w-full pt-3 pb-2">
+          <div class="flat h-30 rounded-lg p-3">checkbox</div>
+        </div>
+      </section>
+    </div>
   </div>
 </template>

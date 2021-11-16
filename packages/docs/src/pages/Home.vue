@@ -4,7 +4,15 @@ import Sidebar from '../components/Sidebar/index.vue'
 <template>
   <sidebar />
   <div class="page" v-scrollable>
-    <router-view />
+    <router-view v-slot="{ Component }">
+      <transition
+        name="page_transition"
+        enter-active-class="animate-animated animate-delay-1s animate-bounceIn"
+        leave-active-class="animate-animated animate-bounceOut"
+      >
+        <component :is="Component" />
+      </transition>
+    </router-view>
   </div>
 </template>
 
