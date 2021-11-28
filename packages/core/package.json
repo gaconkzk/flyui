@@ -23,6 +23,10 @@
     "./styles/*": {
       "import": "./styles/*",
       "require": "./styles/*"
+    },
+    "./assets/*": {
+      "import": "./assets/*",
+      "require": "./assets/*"
     }
   },
   "author": "gaconkzk",
