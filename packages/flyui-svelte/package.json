@@ -1,7 +1,25 @@
 {
   "name": "@gaconkzk/flyui-svelte",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/flyui-svelte.umd.js",
+  "module": "./dist/flyui-svelte.esm.js",
+  "exports": {
+    ".": {
+      "import": "./dist/flyui-svelte.esm.js",
+      "require": "./dist/flyui-svelte.umd.js"
+    },
+    "./css": {
+      "import": "./dist/style.css",
+      "require": "./dist/style.css"
+    },
+    "./types": {
+      "import": "./dist/types/flyui.d.ts"
+    }
+  },
   "scripts": {
     "dev": "vite --host",
     "build": "vite build",
