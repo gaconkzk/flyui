@@ -1,9 +1,9 @@
 <script lang="ts">
-  import FButton from './lib/FButton.svelte'
+  import {FButton} from '.'
   
-  import FIcon from './lib/FIcon.svelte'
+  import { FIcon } from '.'
 
-  import scrollable from './lib/useScrollable'
+  import { scrollable } from '.'
 </script>
 
 <div v-scrollable="scrollable" class="h-screen">
