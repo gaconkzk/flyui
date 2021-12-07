@@ -13,13 +13,13 @@ export const theme = {
       '2-lighter': colors.warmGray[600],
       '2-shadow': colors.warmGray[800],
       '2-highlight': colors.warmGray[500],
+      '2-selected': colors.green[700],
     },
   },
   textColor: {
     prim: {
       1: colors.gray[200],
       2: colors.gray[200],
-      '2-selected': colors.green[700],
     },
   },
 }

@@ -13,6 +13,10 @@
       <f-theme-color />
     </section>
     <section>
+      <h5>Typography</h5>
+      <span class="text-$f-selected text-3xl">Selected text</span>
+    </section>
+    <section>
       <h5>Buttons</h5>
       <FButton>Primary</FButton>
     </section>
