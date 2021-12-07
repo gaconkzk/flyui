@@ -22,7 +22,7 @@ export default defineConfig({
           format: 'esm',
           esModule: true,
           globals: {
-            svelte: 'svelte',
+            svelte: 'Svelte',
           },
           exports: 'named',
         },
@@ -33,7 +33,7 @@ export default defineConfig({
           // Provide global variables to use in the UMD build
           // for externalized deps
           globals: {
-            svelte: 'svelte',
+            svelte: 'Svelte',
           },
           // For dynamic import code (svg icons for now)
           inlineDynamicImports: true,

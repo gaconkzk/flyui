@@ -3,5 +3,6 @@
     "strings": true
   },
   "scss.validate": false,
-  "css.validate": false
+  "css.validate": false,
+  "editor.formatOnSave": true
 }
