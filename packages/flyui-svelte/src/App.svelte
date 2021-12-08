@@ -19,6 +19,7 @@
     <section>
       <h5>Buttons</h5>
       <FButton>Primary</FButton>
+      <FButton on:click={e=>console.log('clicked')}>Clicking</FButton>
     </section>
     <section>
       <h5>Icons</h5>
