@@ -1,6 +1,6 @@
 {
   "name": "@gaconkzk/flyui-svelte",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "type": "module",
   "files": [
     "dist",
