@@ -20,6 +20,9 @@
     },
     "./types": {
       "import": "./dist/types/flyui.d.ts"
+    },
+    "./components/*": {
+      "import": "./src/lib/*"
     }
   },
   "scripts": {
