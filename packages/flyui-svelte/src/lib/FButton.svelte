@@ -2,6 +2,7 @@
   import '@gaconkzk/core/styles/components/fbutton.scss';
 
   import { createEventDispatcher } from 'svelte'
+import { get_current_component } from 'svelte/internal';
 
   const dispatch = createEventDispatcher()
 
@@ -15,9 +16,12 @@
   export { classes as class }
   let classes: string = ''
 
+  const component = get_current_component()
+
   function handleClick(e: Event) {
     if (!disabled) {
       dispatch('click', e)
+      component?.dispatchEvent?.(new CustomEvent('click', e))
     }
   }
 
