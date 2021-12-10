@@ -53,6 +53,10 @@ export default defineConfig({
   },
   plugins: [
     WindiCSS(),
-    svelte(),
+    svelte({
+      compilerOptions: {
+        customElement: true,
+      },
+    }),
   ],
 })
