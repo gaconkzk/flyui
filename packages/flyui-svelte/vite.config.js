@@ -54,9 +54,9 @@ export default defineConfig({
   plugins: [
     WindiCSS(),
     svelte({
-      compilerOptions: {
-        customElement: true,
-      },
+      experimental: {
+        prebundleSvelteLibraries: true,
+      }
     }),
   ],
 })

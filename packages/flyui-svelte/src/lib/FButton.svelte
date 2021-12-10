@@ -41,8 +41,6 @@ import { get_current_component } from 'svelte/internal';
   }
 </script>
 
-<svelte:options tag="f-button" />
-
 <div class={btnClasses.join(' ')} tabindex="0" on:click={handleClick}>
   <slot />
 </div>
