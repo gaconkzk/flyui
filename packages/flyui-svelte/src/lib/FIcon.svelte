@@ -37,6 +37,6 @@
   }
 </script>
 
-<svelte:options tag="f-button" />
+<svelte:options tag="f-icon" />
 
 {@html data}
