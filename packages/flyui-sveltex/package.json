@@ -1,6 +1,6 @@
 {
   "name": "@gaconkzk/flyui-svelte",
-  "version": "0.1.19",
+  "version": "0.1.20",
   "svelte": "index.js",
   "scripts": {
     "dev": "svelte-kit dev",
