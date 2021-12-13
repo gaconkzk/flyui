@@ -1,6 +1,6 @@
 {
   "name": "@gaconkzk/flyui-svelte",
-  "version": "0.1.18",
+  "version": "0.1.19",
   "svelte": "index.js",
   "scripts": {
     "dev": "svelte-kit dev",
@@ -32,5 +32,8 @@
     "vite-plugin-windicss": "^1.5.4",
     "windicss": "^3.2.1"
   },
-  "type": "module"
+  "type": "module",
+  "peerDependencies": {
+    "svelte": "^3.44.2"
+  }
 }
