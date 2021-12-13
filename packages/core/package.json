@@ -2,11 +2,9 @@
   "name": "@gaconkzk/core",
   "version": "1.0.2",
   "description": "",
-  "typings": "core.d.ts",
+  "typings": "index.d.ts",
   "files": [
-    "utils",
-    "tailwindcss-neumorphism.ts",
-    "styles"
+    "."
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

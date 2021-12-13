@@ -14,27 +14,16 @@ export default defineConfig({
       name: 'flyui',
     },
     rollupOptions: {
-      // make sure to externalize deps that shouldn't be bundled
-      // into your library
-      external: ['svelte'],
       output: [
         {
           format: 'esm',
           esModule: true,
-          globals: {
-            svelte: 'Svelte',
-          },
           exports: 'named',
         },
         // This umd config not tested and must be put after esm - when put before - the code splitting not work anymore
         {
           format: 'umd',
           interop: 'esModule',
-          // Provide global variables to use in the UMD build
-          // for externalized deps
-          globals: {
-            svelte: 'Svelte',
-          },
           // For dynamic import code (svg icons for now)
           inlineDynamicImports: true,
           exports: 'named',
@@ -55,7 +44,7 @@ export default defineConfig({
     WindiCSS(),
     svelte({
       experimental: {
-        prebundleSvelteLibraries: true,
+        prebundleSvelteLibraries: false,
       }
     }),
   ],
