@@ -15,7 +15,7 @@
     "build:svelte": "pnpm build --filter=\"@gaconkzk/flyui-svelte\"",
     "publish:vue3": "pnpm publish --access=public --filter=\"@gaconkzk/flyui-vue3\"",
     "publish:react": "pnpm publish --access=public --filter=\"@gaconkzk/flyui-react\"",
-    "publish:svelte": "pnpm publish --access=public --filter=\"@gaconkzk/flyui-svelte\""
+    "publish:svelte": "pnpm run pub --filter=\"@gaconkzk/flyui-svelte\""
   },
   "repository": {
     "type": "git",
