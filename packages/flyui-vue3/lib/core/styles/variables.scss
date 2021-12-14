@@ -1,0 +1,47 @@
+:root {
+  // primary background and neumophism tone
+  --f-primary: theme('colors.prim.2');
+  --f-primary-lighter: theme('colors.prim.2-lighter');
+  --f-primary-shadow: theme('colors.prim.2-shadow');
+  --f-primary-highlight: theme('colors.prim.2-highlight');
+  // primary text color - I might not use using negative text
+  --t-primary: theme('textColor.prim.2');
+  // Usually use for error color
+  --f-error: theme('colors.red.500');
+  --f-error-dark: theme('colors.red.900');
+  --f-scroll: theme('colors.prim.2-lighter');
+  --f-selected: theme('colors.prim.2-selected');
+}
+
+html {
+  @apply text-$t-primary text-base bg-$f-primary overflow-hidden;
+}
+body {
+  position: relative;
+}
+#app {
+  @apply font-sans antialiased text-center;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    @apply my-4;
+  }
+
+  h1 {
+    @apply text-5xl;
+  }
+  h2 {
+    @apply text-4xl;
+  }
+  h3 {
+    @apply text-3xl;
+  }
+  h4 {
+    @apply text-2xl;
+  }
+  h5 {
+    @apply text-xl;
+  }
+}

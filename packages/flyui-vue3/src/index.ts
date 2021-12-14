@@ -6,7 +6,7 @@ import FTextField from '@/components/FTextField/index.vue'
 import FSelect from '@/components/FSelect/index.vue'
 import FIcon from '@/components/FIcon/index.vue'
 
-import { FScrollable } from '@gaconkzk/core/utils/FScrollable'
+import { FScrollable } from '$lib/core/utils/FScrollable'
 
 const components = {
   FButton,
@@ -18,11 +18,11 @@ const components = {
 
 import 'virtual:windi.css'
 
-import '@gaconkzk/core/styles/variables.scss'
-import '@gaconkzk/core/styles/neumophism.scss'
+import '$lib/core/styles/variables.scss'
+import '$lib/core/styles/neumophism.scss'
 
 // scrollable - auto import
-import '@gaconkzk/core/styles/components/fscrollable.scss'
+import '$lib/core/styles/components/fscrollable.scss'
 
 import { App } from 'vue'
 
@@ -63,7 +63,7 @@ export {
   updateTheme,
   defaultTheme,
   currentTheme,
-} from '@gaconkzk/core/utils/theme'
+} from '$lib/core/utils/theme'
 export { default as FButton } from '@/components/FButton'
 export { default as FDrawer } from '@/components/FDrawer'
 export { default as FIcon } from '@/components/FIcon'

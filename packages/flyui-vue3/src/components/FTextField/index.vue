@@ -102,5 +102,5 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import '@gaconkzk/core/styles/components/ftextfield.scss';
+@import '$lib/core/styles/components/ftextfield.scss';
 </style>

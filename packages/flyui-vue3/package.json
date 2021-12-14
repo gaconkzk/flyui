@@ -1,9 +1,10 @@
 {
   "name": "@gaconkzk/flyui-vue3",
-  "version": "0.2.1-alpha-4",
+  "version": "0.2.2",
   "files": [
     "dist",
-    "@types"
+    "@types",
+    "lib"
   ],
   "main": "./dist/flyui-vue3.umd.js",
   "module": "./dist/flyui-vue3.esm.js",
@@ -18,6 +19,10 @@
     },
     "./types": {
       "import": "./dist/types/flyui.d.ts"
+    },
+    "./core/*": {
+      "import": "./lib/core/*",
+      "require": "./lib/core/*"
     }
   },
   "scripts": {
@@ -26,7 +31,6 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "@gaconkzk/core": "workspace:*",
     "@windicss/plugin-scrollbar": "^1.2.3",
     "color": "^4.0.1",
     "lodash": "^4.17.21",

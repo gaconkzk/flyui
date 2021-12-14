@@ -1,0 +1,119 @@
+.f-form-text-field {
+  @apply flex flex-col flex-wrap relative h-20;
+
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
+    appearance: none;
+  }
+
+  // Firefox
+  input[type='number'] {
+    appearance: textfield;
+  }
+
+  input[type='text']:focus,
+  input[type='email']:focus,
+  input[type='url']:focus,
+  input[type='password']:focus,
+  input[type='number']:focus,
+  input[type='date']:focus,
+  input[type='datetime-local']:focus,
+  input[type='month']:focus,
+  input[type='search']:focus,
+  input[type='tel']:focus,
+  input[type='time']:focus,
+  input[type='week']:focus,
+  input[multiple]:focus,
+  textarea:focus,
+  select:focus {
+    @apply nm-inset-$f-primary-sm outline-none;
+  }
+
+  input[type='text']:not(.disabled):not(.invalid),
+  input[type='number']:not(.disabled):not(.invalid),
+  input[type='email']:not(.disabled):not(.invalid),
+  input[type='password']:not(.disabled):not(.invalid),
+  input[type='time']:not(.disabled):not(.invalid) {
+    @apply nm-inset-$f-primary rounded-md h-10;
+
+    &.append {
+      @apply mr-28px rounded-r-none border-r-0;
+    }
+
+    &.prepend {
+      @apply ml-28px rounded-l-none border-l-0;
+    }
+  }
+
+  input[type='text'].invalid,
+  input[type='number'].invalid,
+  input[type='email'].invalid,
+  input[type='password'].invalid,
+  input[type='time'].invalid {
+    @apply nm-inset-$f-primary border-$f-error rounded-md h-10 ring-0 ring-current outline-current outline-none;
+
+    &.append {
+      @apply mr-28px rounded-r-none border-r-0;
+    }
+
+    &.prepend {
+      @apply ml-28px rounded-l-none border-l-0;
+    }
+  }
+
+  .f-label {
+    @apply mx-1 text-sm;
+  }
+
+  // Should have space for display error - and dont break layout
+  .f-invalid {
+    @apply text-$f-error text-xs mx-1;
+    &.error-message {
+      // do not take original space - use absolute
+      @apply absolute -bottom-3;
+    }
+  }
+
+  .f-input-group {
+    @apply flex w-full items-stretch;
+    .f-input {
+      @apply relative nm-inset-$f-primary-sm my-1 cursor-text rounded-md w-full px-2;
+
+      &.disabled,
+      &.disabled:focus,
+      &.disabled:hover {
+        @apply bg-opacity-20 text-opacity-40 cursor-not-allowed opacity-60;
+      }
+
+      &.invalid,
+      &.invalid:focus,
+      &.invalid:hover {
+        @apply border-opacity-60 border-$f-error;
+      }
+    }
+
+    .append-container {
+      @apply absolute right-0 h-10 items-center flex my-1 py-2 px-1.5 border-$f-primary-lighter border-1 border-l-0 rounded-r-lg;
+
+      &.invalid {
+        @apply text-$f-error border-opacity-60 border-$f-error border-l-0;
+      }
+
+      &.disabled {
+        @apply cursor-not-allowed;
+      }
+    }
+
+    .prepend-container {
+      @apply absolute left-0 h-10 items-center flex my-1 py-2 px-1.5 border-$f-primary-lighter border-1 border-r-0 rounded-l-lg;
+
+      &.invalid {
+        @apply text-$f-error border-opacity-60 border-$f-error border-r-0;
+      }
+
+      &.disabled {
+        @apply cursor-not-allowed;
+      }
+    }
+  }
+}

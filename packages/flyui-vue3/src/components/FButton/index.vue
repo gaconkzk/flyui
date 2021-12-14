@@ -89,5 +89,5 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import '@gaconkzk/core/styles/components/fbutton.scss';
+@import '$lib/core/styles/components/fbutton.scss';
 </style>

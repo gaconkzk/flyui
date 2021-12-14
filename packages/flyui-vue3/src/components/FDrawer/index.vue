@@ -145,5 +145,5 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import '@gaconkzk/core/styles/components/fdrawer.scss';
+@import '$lib/core/styles/components/fdrawer.scss';
 </style>

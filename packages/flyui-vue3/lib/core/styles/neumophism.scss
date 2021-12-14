@@ -1,0 +1,15 @@
+.flat {
+  @apply nm-flat-$f-primary;
+}
+
+.inset {
+  @apply nm-inset-$f-primary;
+}
+
+.convex {
+  @apply nm-convex-$f-primary;
+}
+
+.concave {
+  @apply nm-concave-$f-primary;
+}

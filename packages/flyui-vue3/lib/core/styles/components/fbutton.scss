@@ -1,0 +1,47 @@
+.button {
+  @apply text-$t-primary opacity-80 rounded-lg inline-block text-center select-none py-1 px-4;
+  &:hover {
+    @apply opacity-100 cursor-pointer;
+  }
+
+  &.flat {
+    @apply nm-flat-$f-primary;
+
+    &.activated,
+    &:active {
+      @apply nm-inset-$f-primary;
+    }
+  }
+
+  &.convex {
+    @apply nm-convex-$f-primary;
+
+    &.activated,
+    &:active {
+      @apply nm-concave-$f-primary;
+    }
+  }
+
+  &.fround {
+    @apply rounded-full;
+  }
+
+  &:hover {
+    @apply opacity-90;
+  }
+
+  &.activated,
+  &:active {
+    @apply opacity-100;
+  }
+}
+
+// this is fix for desktop/pc - no touch - when hover
+@media (hover: hover) and (pointer: fine) {
+  .button.flat:hover {
+    @apply nm-inset-$f-primary;
+  }
+  .button.convex:hover {
+    @apply nm-concave-$f-primary;
+  }
+}

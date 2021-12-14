@@ -76,7 +76,6 @@
 </template>
 
 <script lang="ts">
-import { FScrollable } from '@gaconkzk/core/utils/FScrollable'
 import {
   computed,
   defineComponent,
@@ -86,7 +85,9 @@ import {
   onBeforeUnmount,
 } from 'vue'
 import { SelectType } from '../../@types/forms/select'
-import '@gaconkzk/core/styles/components/fselect.scss'
+
+import { FScrollable } from '$lib/core/utils/FScrollable'
+import '$lib/core/styles/components/fselect.scss'
 
 export default defineComponent({
   name: 'FSelect',

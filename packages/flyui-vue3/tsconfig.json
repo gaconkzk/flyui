@@ -12,10 +12,11 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "lib": ["esnext", "dom"],
-    "types": ["@gaconkzk/core", "vue"],
     "baseUrl": ".",
+    "types": [],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "$lib/*": ["./lib/*"]
     }
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],

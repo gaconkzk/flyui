@@ -1,5 +1,4 @@
 /// <reference types="vite/client" />
-/// <reference types="@gaconkzk/core" />
 
 declare module '*.vue' {
   import { defineComponent } from 'vue'

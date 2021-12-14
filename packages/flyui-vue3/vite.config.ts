@@ -5,7 +5,7 @@ import svgicon from 'vite-plugin-svgicon'
 import WindiCSS from 'vite-plugin-windicss'
 import * as path from 'path'
 
-import libInjectCss from './libs/libInjectCss'
+import libInjectCss from './lib/libInjectCss'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -49,6 +49,10 @@ export default defineConfig({
       {
         find: '@',
         replacement: path.resolve(__dirname, 'src'),
+      },
+      {
+        find: '$lib',
+        replacement: path.resolve(__dirname, 'lib'),
       },
     ],
   },
