@@ -1,8 +1,7 @@
 <script lang="ts">
-  import '@gaconkzk/core/styles/components/fbutton.scss';
-
   import { createEventDispatcher } from 'svelte'
-import { get_current_component } from 'svelte/internal';
+  import { get_current_component } from 'svelte/internal'
+  import '@gaconkzk/core/styles/components/fbutton.scss'
 
   const dispatch = createEventDispatcher()
 
