@@ -24,7 +24,7 @@ export const theme = {
   },
 }
 
-export const updateTheme = (primaryColor: string) => {
+export const updateTheme = (primaryColor: string): void => {
   const rootStyle = getComputedStyle(document.documentElement)
   const originalColor = rootStyle.getPropertyValue('--f-primary')
   if (originalColor !== primaryColor) {
@@ -36,14 +36,14 @@ export const updateTheme = (primaryColor: string) => {
     document.documentElement.style.setProperty(
       '--f-primary-shadow',
       Color(primaryColor).lighten(0.15).isDark()
-        ? Color(primaryColor).darken(0.45).hex()
-        : Color(primaryColor).darken(0.25).hex(),
+        ? Color(primaryColor).darken(0.25).hex()
+        : Color(primaryColor).darken(0.15).hex(),
     )
     document.documentElement.style.setProperty(
       '--f-primary-highlight',
       Color(primaryColor).isLight()
-        ? Color(primaryColor).lighten(0.2).hex()
-        : Color(primaryColor).lighten(0.35).hex(),
+        ? Color(primaryColor).lighten(0.15).hex()
+        : Color(primaryColor).lighten(0.25).hex(),
     )
     document.documentElement.style.setProperty(
       '--t-primary',
@@ -52,7 +52,7 @@ export const updateTheme = (primaryColor: string) => {
   }
 }
 
-export const defaultTheme = () => {
+export const defaultTheme = (): void => {
   updateTheme(theme.colors.prim[2])
 }
 
