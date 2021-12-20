@@ -13,12 +13,30 @@
     }
   }
 
+  &.flat-noborder {
+    @apply nm-noborder-flat-$f-primary;
+
+    &.activated,
+    &:active {
+      @apply nm-noborder-inset-$f-primary;
+    }
+  }
+
   &.convex {
     @apply nm-convex-$f-primary;
 
     &.activated,
     &:active {
       @apply nm-concave-$f-primary;
+    }
+  }
+
+  &.convex-noborder {
+    @apply nm-noborder-convex-$f-primary;
+
+    &.activated,
+    &:active {
+      @apply nm-noborder-concave-$f-primary;
     }
   }
 
@@ -43,5 +61,11 @@
   }
   .button.convex:hover {
     @apply nm-concave-$f-primary;
+  }
+  .button.flat-noborder:hover {
+    @apply nm-noborder-inset-$f-primary;
+  }
+  .button.convex-noborder:hover {
+    @apply nm-noborder-concave-$f-primary;
   }
 }

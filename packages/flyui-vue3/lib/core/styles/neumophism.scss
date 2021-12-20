@@ -13,3 +13,20 @@
 .concave {
   @apply nm-concave-$f-primary;
 }
+
+// noborder
+.flat-noborder {
+  @apply nm-noborder-flat-$f-primary;
+}
+
+.inset-noborder {
+  @apply nm-noborder-inset-$f-primary;
+}
+
+.convex-noborder {
+  @apply nm-noborder-convex-$f-primary;
+}
+
+.concave-noborder {
+  @apply nm-noborder-concave-$f-primary;
+}

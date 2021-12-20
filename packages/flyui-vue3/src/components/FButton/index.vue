@@ -50,6 +50,10 @@ export default defineComponent({
       type: [String, Array, Object],
       default: '',
     },
+    noborder: {
+      type: Boolean,
+      default: false,
+    },
   },
   emits: ['click'],
   data() {
@@ -60,8 +64,9 @@ export default defineComponent({
   },
   computed: {
     btnClass(): string[] {
+      const nmType = `${this.nmType}${this.noborder ? '-noborder' : ''}`
       return [
-        this.nmType,
+        nmType,
         this.activated ? 'activated' : '',
         this.rounded ? 'fround' : '',
         this.variant ?? '',

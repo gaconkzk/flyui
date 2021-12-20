@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import FThemeColor from './FThemeColor.vue'
+import FButton from './components/FButton/index.vue'
 const toggleDrawer = ref<boolean>(false)
 </script>
 
@@ -13,7 +14,10 @@ const toggleDrawer = ref<boolean>(false)
       </section>
       <section>
         <h5>Buttons</h5>
-        <f-button>Primary</f-button>
+        <div class="flex flex-row gap-4 justify-center mx-auto">
+          <f-button>Primary</f-button>
+          <f-button noborder>No border</f-button>
+        </div>
       </section>
       <section>
         <h5>Modals</h5>
@@ -145,5 +149,5 @@ const toggleDrawer = ref<boolean>(false)
 </template>
 
 <style lang="scss">
-@import '@gaconkzk/core/styles/variables.scss';
+@import '$lib/core/styles/variables.scss';
 </style>

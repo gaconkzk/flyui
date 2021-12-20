@@ -48,6 +48,8 @@ const highlightGradient = (color) =>
     ? Color(color).lighten(0.1).hex()
     : Color(color).lighten(0.05).hex()
 
+const borderLightenColor = (color) => Color(color).lighten(0.15).hex()
+
 const generateShades = (color) => {
   try {
     return {
@@ -56,6 +58,7 @@ const generateShades = (color) => {
       highlightColor: highlightColor(color),
       shadowGradient: shadowGradient(color),
       highlightGradient: highlightGradient(color),
+      borderLightenColor: borderLightenColor(color),
     }
   } catch (err) {
     console.error(err)
@@ -93,7 +96,16 @@ export default plugin(
               ? `.${e(`nm-flat-${colorKey}`)}`
               : `.${e(`nm-flat-${colorKey}-${sizeKey}`)}`,
             {
-              border: `1px solid ${Color(color).lighten(0.15).hex()}`,
+              border: `1px solid ${shades.borderLightenColor}`,
+              background: shades.baseColor,
+              boxShadow: `${size} ${size} calc(${size} * 2) ${shades.shadowColor}, calc(${size} * -1) calc(${size} * -1) calc(${size} * 2) ${shades.highlightColor}`,
+            },
+          ])
+          nmFlatPairs.push([
+            sizeKey.toLowerCase() === 'default'
+              ? `.${e(`nm-noborder-flat-${colorKey}`)}`
+              : `.${e(`nm-noborder-flat-${colorKey}-${sizeKey}`)}`,
+            {
               background: shades.baseColor,
               boxShadow: `${size} ${size} calc(${size} * 2) ${shades.shadowColor}, calc(${size} * -1) calc(${size} * -1) calc(${size} * 2) ${shades.highlightColor}`,
             },
@@ -108,17 +120,31 @@ export default plugin(
     )
 
     addDynamic('nm-flat', ({ Utility, Style }) => {
-      const prop = Utility.handler.handleVariable((v) => v).value
-      const propBase = `var(--${prop})`
-      const propLighter = `var(--${prop}-lighter)`
-      const propShadow = `var(--${prop}-shadow)`
-      const propHighlight = `var(--${prop}-highlight)`
-      if (!prop) return
+      const propVariable = Utility.handler.handleVariable((v) => v).value
+      if (!propVariable) return
+      const propVariableBase = `var(--${propVariable})`
+      const propVariableLighter = `var(--${propVariable}-lighter)`
+      const propVariableShadow = `var(--${propVariable}-shadow)`
+      const propVariableHighlight = `var(--${propVariable}-highlight)`
 
       return Style.generate(Utility.class, {
-        border: `1px solid ${propLighter}`,
-        background: propBase,
-        boxShadow: `0.2em 0.2em calc(0.2em * 2) ${propShadow}, calc(-0.2em) calc(-0.2em) calc(0.2em * 2) ${propHighlight}`,
+        border: `1px solid ${propVariableLighter}`,
+        background: propVariableBase,
+        boxShadow: `0.2em 0.2em calc(0.2em * 2) ${propVariableShadow}, calc(-0.2em) calc(-0.2em) calc(0.2em * 2) ${propVariableHighlight}`,
+      })
+    })
+
+    addDynamic('nm-noborder-flat', ({ Utility, Style }) => {
+      const propVariable = Utility.handler.handleVariable((v) => v).value
+      if (!propVariable) return
+
+      const propVariableBase = `var(--${propVariable})`
+      const propVariableShadow = `var(--${propVariable}-shadow)`
+      const propVariableHighlight = `var(--${propVariable}-highlight)`
+
+      return Style.generate(Utility.class, {
+        background: propVariableBase,
+        boxShadow: `0.2em 0.2em calc(0.2em * 2) ${propVariableShadow}, calc(-0.2em) calc(-0.2em) calc(0.2em * 2) ${propVariableHighlight}`,
       })
     })
 
@@ -142,7 +168,16 @@ export default plugin(
               ? `.${e(`nm-concave-${colorKey}`)}`
               : `.${e(`nm-concave-${colorKey}-${sizeKey}`)}`,
             {
-              border: `1px solid ${Color(color).lighten(0.15).hex()}`,
+              border: `1px solid ${shades.borderLightenColor}`,
+              background: `linear-gradient(145deg, ${shades.shadowGradient}, ${shades.highlightGradient})`,
+              boxShadow: `${size} ${size} calc(${size} * 2) ${shades.shadowColor}, calc(${size} * -1) calc(${size} * -1) calc(${size} * 2) ${shades.highlightColor}`,
+            },
+          ])
+          nmConcavePairs.push([
+            sizeKey.toLowerCase() === 'default'
+              ? `.${e(`nm-noborder-concave${colorKey}`)}`
+              : `.${e(`nm-noborder-concave${colorKey}-${sizeKey}`)}`,
+            {
               background: `linear-gradient(145deg, ${shades.shadowGradient}, ${shades.highlightGradient})`,
               boxShadow: `${size} ${size} calc(${size} * 2) ${shades.shadowColor}, calc(${size} * -1) calc(${size} * -1) calc(${size} * 2) ${shades.highlightColor}`,
             },
@@ -157,16 +192,28 @@ export default plugin(
     )
 
     addDynamic('nm-concave', ({ Utility, Style }) => {
-      const prop = Utility.handler.handleVariable((v) => v).value
-      const propLighter = `var(--${prop}-lighter)`
-      const propShadow = `var(--${prop}-shadow)`
-      const propHighlight = `var(--${prop}-highlight)`
-      if (!prop) return
+      const propVariable = Utility.handler.handleVariable((v) => v).value
+      const propVariableLighter = `var(--${propVariable}-lighter)`
+      const propVariableShadow = `var(--${propVariable}-shadow)`
+      const propVariableHighlight = `var(--${propVariable}-highlight)`
+      if (!propVariable) return
 
       return Style.generate(Utility.class, {
-        border: `1px solid ${propLighter}`,
-        background: `linear-gradient(145deg, ${propShadow}, ${propHighlight})`,
-        boxShadow: `0.2em 0.2em calc(0.2em * 2) ${propShadow}, calc(-0.2em) calc(-0.2em) calc(0.2em * 2) ${propHighlight}`,
+        border: `1px solid ${propVariableLighter}`,
+        background: `linear-gradient(145deg, ${propVariableShadow}, ${propVariableHighlight})`,
+        boxShadow: `0.2em 0.2em calc(0.2em * 2) ${propVariableShadow}, calc(-0.2em) calc(-0.2em) calc(0.2em * 2) ${propVariableHighlight}`,
+      })
+    })
+
+    addDynamic('nm-noborder-concave', ({ Utility, Style }) => {
+      const propVariable = Utility.handler.handleVariable((v) => v).value
+      if (!propVariable) return
+      const propVariableShadow = `var(--${propVariable}-shadow)`
+      const propVariableHighlight = `var(--${propVariable}-highlight)`
+
+      return Style.generate(Utility.class, {
+        background: `linear-gradient(145deg, ${propVariableShadow}, ${propVariableHighlight})`,
+        boxShadow: `0.2em 0.2em calc(0.2em * 2) ${propVariableShadow}, calc(-0.2em) calc(-0.2em) calc(0.2em * 2) ${propVariableHighlight}`,
       })
     })
 
@@ -190,7 +237,16 @@ export default plugin(
               ? `.${e(`nm-convex-${colorKey}`)}`
               : `.${e(`nm-convex-${colorKey}-${sizeKey}`)}`,
             {
-              border: `1px solid ${Color(color).lighten(0.15).hex()}`,
+              border: `1px solid ${shades.borderLightenColor}`,
+              background: `linear-gradient(145deg, ${shades.highlightGradient}, ${shades.shadowGradient})`,
+              boxShadow: `${size} ${size} calc(${size} * 2) ${shades.shadowColor}, calc(${size} * -1) calc(${size} * -1) calc(${size} * 2) ${shades.highlightColor}`,
+            },
+          ])
+          nmConvexPairs.push([
+            sizeKey.toLowerCase() === 'default'
+              ? `.${e(`nm-noborder-convex${colorKey}`)}`
+              : `.${e(`nm-noborder-convex${colorKey}-${sizeKey}`)}`,
+            {
               background: `linear-gradient(145deg, ${shades.highlightGradient}, ${shades.shadowGradient})`,
               boxShadow: `${size} ${size} calc(${size} * 2) ${shades.shadowColor}, calc(${size} * -1) calc(${size} * -1) calc(${size} * 2) ${shades.highlightColor}`,
             },
@@ -205,16 +261,27 @@ export default plugin(
     )
 
     addDynamic('nm-convex', ({ Utility, Style }) => {
-      const prop = Utility.handler.handleVariable((v) => v).value
-      const propLighter = `var(--${prop}-lighter)`
-      const propShadow = `var(--${prop}-shadow)`
-      const propHighlight = `var(--${prop}-highlight)`
-      if (!prop) return
+      const propVariable = Utility.handler.handleVariable((v) => v).value
+      if (!propVariable) return
+      const propVariableLighter = `var(--${propVariable}-lighter)`
+      const propVariableShadow = `var(--${propVariable}-shadow)`
+      const propVariableHighlight = `var(--${propVariable}-highlight)`
 
       return Style.generate(Utility.class, {
-        border: `1px solid ${propLighter}`,
-        background: `linear-gradient(145deg, ${propHighlight}, ${propShadow})`,
-        boxShadow: `0.2em 0.2em calc(0.2em * 2) ${propShadow}, calc(-0.2em) calc(-0.2em) calc(0.2em * 2) ${propHighlight}`,
+        border: `1px solid ${propVariableLighter}`,
+        background: `linear-gradient(145deg, ${propVariableHighlight}, ${propVariableShadow})`,
+        boxShadow: `0.2em 0.2em calc(0.2em * 2) ${propVariableShadow}, calc(-0.2em) calc(-0.2em) calc(0.2em * 2) ${propVariableHighlight}`,
+      })
+    })
+    addDynamic('nm-noborder-convex', ({ Utility, Style }) => {
+      const propVariable = Utility.handler.handleVariable((v) => v).value
+      if (!propVariable) return
+      const propVariableShadow = `var(--${propVariable}-shadow)`
+      const propVariableHighlight = `var(--${propVariable}-highlight)`
+
+      return Style.generate(Utility.class, {
+        background: `linear-gradient(145deg, ${propVariableHighlight}, ${propVariableShadow})`,
+        boxShadow: `0.2em 0.2em calc(0.2em * 2) ${propVariableShadow}, calc(-0.2em) calc(-0.2em) calc(0.2em * 2) ${propVariableHighlight}`,
       })
     })
 
@@ -243,6 +310,15 @@ export default plugin(
               boxShadow: `inset ${size} ${size} calc(${size} * 2) ${shades.shadowColor}, inset calc(${size} * -1) calc(${size} * -1) calc(${size} * 2) ${shades.highlightColor}`,
             },
           ])
+          nmInsetPairs.push([
+            sizeKey.toLowerCase() === 'default'
+              ? `.${e(`nm-inset-noborder-${colorKey}`)}`
+              : `.${e(`nm-inset-noborder-${colorKey}-${sizeKey}`)}`,
+            {
+              background: shades.baseColor,
+              boxShadow: `inset ${size} ${size} calc(${size} * 2) ${shades.shadowColor}, inset calc(${size} * -1) calc(${size} * -1) calc(${size} * 2) ${shades.highlightColor}`,
+            },
+          ])
         })
       },
     )
@@ -253,17 +329,28 @@ export default plugin(
     )
 
     addDynamic('nm-inset', ({ Utility, Style }) => {
-      const prop = Utility.handler.handleVariable((v) => v).value
-      const propBase = `var(--${prop})`
-      const propLighter = `var(--${prop}-lighter)`
-      const propShadow = `var(--${prop}-shadow)`
-      const propHighlight = `var(--${prop}-highlight)`
-      if (!prop) return
+      const propVariable = Utility.handler.handleVariable((v) => v).value
+      if (!propVariable) return
+      const propVariableBase = `var(--${propVariable})`
+      const propVariableShadow = `var(--${propVariable}-shadow)`
+      const propVariableHighlight = `var(--${propVariable}-highlight)`
 
       return Style.generate(Utility.class, {
-        border: `1px solid ${propLighter}`,
-        background: propBase,
-        boxShadow: `inset 0.2em 0.2em calc(0.2em * 2) ${propShadow}, inset calc(-0.2em) calc(-0.2em) calc(0.2em * 2) ${propHighlight}`,
+        border: `1px solid transparent`,
+        background: propVariableBase,
+        boxShadow: `inset 0.2em 0.2em calc(0.2em * 2) ${propVariableShadow}, inset calc(-0.2em) calc(-0.2em) calc(0.2em * 2) ${propVariableHighlight}`,
+      })
+    })
+    addDynamic('nm-noborder-inset', ({ Utility, Style }) => {
+      const propVariable = Utility.handler.handleVariable((v) => v).value
+      if (!propVariable) return
+      const propVariableBase = `var(--${propVariable})`
+      const propVariableShadow = `var(--${propVariable}-shadow)`
+      const propVariableHighlight = `var(--${propVariable}-highlight)`
+
+      return Style.generate(Utility.class, {
+        background: propVariableBase,
+        boxShadow: `inset 0.2em 0.2em calc(0.2em * 2) ${propVariableShadow}, inset calc(-0.2em) calc(-0.2em) calc(0.2em * 2) ${propVariableHighlight}`,
       })
     })
   },
