@@ -4,93 +4,95 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script setup lang="ts">
+// import { defineComponent } from 'vue'
 
-export default defineComponent({
-  name: 'FButton',
-  props: {
-    tag: {
-      type: String,
-      default: 'button',
-    },
-    disabled: {
-      type: Boolean,
-      default: false,
-    },
-    activated: {
-      type: Boolean,
-      default: false,
-    },
-    variant: {
-      type: String,
-      default: '',
-    },
-    variantType: {
-      type: String,
-      default: 'normal',
-    },
-    size: {
-      type: String,
-      default: '',
-    },
-    rounded: {
-      type: Boolean,
-      default: false,
-    },
-    type: {
-      type: String,
-      default: '',
-    },
-    nmType: {
-      type: String,
-      default: 'flat',
-    },
-    classes: {
-      type: [String, Array, Object],
-      default: '',
-    },
-    noborder: {
-      type: Boolean,
-      default: false,
-    },
+import { computed, ref } from 'vue'
+
+const props = defineProps({
+  tag: {
+    type: String,
+    default: 'button',
   },
-  emits: ['click'],
-  data() {
-    return {
-      loading: false,
-      disableButton: this.disabled,
-    }
+  disabled: {
+    type: Boolean,
+    default: false,
   },
-  computed: {
-    btnClass(): string[] {
-      const nmType = `${this.nmType}${this.noborder ? '-noborder' : ''}`
-      return [
-        nmType,
-        this.activated ? 'activated' : '',
-        this.rounded ? 'fround' : '',
-        this.variant ?? '',
-        this.disabled ? 'disabled' : '',
-        this.size,
-      ]
-    },
+  activated: {
+    type: Boolean,
+    default: false,
   },
-  methods: {
-    startLoading() {
-      this.loading = true
-      this.disableButton = true
-    },
-    stopLoading() {
-      this.loading = false
-      this.disableButton = false
-    },
-    callback(e: Event): void {
-      if (!this.disabled) {
-        this.$emit('click', e)
-      }
-    },
+  variant: {
+    type: String,
+    default: '',
+  },
+  variantType: {
+    type: String,
+    default: 'normal',
+  },
+  size: {
+    type: String,
+    default: '',
+  },
+  rounded: {
+    type: Boolean,
+    default: false,
+  },
+  type: {
+    type: String,
+    default: '',
+  },
+  nmType: {
+    type: String,
+    default: 'flat',
+  },
+  classes: {
+    type: [String, Array, Object],
+    default: '',
+  },
+  noborder: {
+    type: Boolean,
+    default: false,
   },
 })
+
+const loading = ref(false)
+const disableButton = ref(props.disabled)
+
+const emit = defineEmits(['click'])
+
+const btnClass = computed(() => {
+  const nmType = `${props.nmType}${!!props.noborder ? '-noborder' : ''}`
+  return [
+    nmType,
+    props.activated ? 'activated' : '',
+    props.rounded ? 'fround' : '',
+    props.variant ?? '',
+    props.disabled ? 'disabled' : '',
+    props.size,
+  ]
+})
+
+const startLoading = () => {
+  loading.value = true
+  disableButton.value = true
+}
+
+const stopLoading = () => {
+  loading.value = false
+  disableButton.value = props.disabled
+}
+// expose those function outside
+defineExpose({
+  startLoading,
+  stopLoading,
+})
+
+function callback(e: Event): void {
+  if (!props.disabled) {
+    emit('click', e)
+  }
+}
 </script>
 
 <style lang="scss" scoped>

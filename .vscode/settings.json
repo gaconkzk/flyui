@@ -4,5 +4,6 @@
   },
   "scss.validate": false,
   "css.validate": false,
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "terminal.integrated.fontFamily": "MesloLGS NF"
 }
