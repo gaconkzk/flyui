@@ -17,12 +17,7 @@ const components = {
 }
 
 import 'virtual:windi.css'
-
-import '$lib/core/styles/variables.scss'
-import '$lib/core/styles/neumophism.scss'
-
-// scrollable - auto import
-import '$lib/core/styles/components/fscrollable.scss'
+import '$lib/core/styles/index.scss'
 
 import { App } from 'vue'
 

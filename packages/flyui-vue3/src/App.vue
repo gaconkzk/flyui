@@ -16,7 +16,7 @@ const toggleDrawer = ref<boolean>(false)
         <h5>Buttons</h5>
         <div class="flex flex-row gap-4 justify-center mx-auto">
           <f-button>Primary</f-button>
-          <f-button noborder>No border</f-button>
+          <f-button noborder rounded>Rounded No border</f-button>
         </div>
       </section>
       <section>

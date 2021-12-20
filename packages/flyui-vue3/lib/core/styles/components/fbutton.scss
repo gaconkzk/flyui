@@ -1,4 +1,4 @@
-.button {
+.fbutton {
   @apply text-$t-primary opacity-80 rounded-lg inline-block text-center select-none py-1 px-4;
   &:hover {
     @apply opacity-100 cursor-pointer;
@@ -56,16 +56,16 @@
 
 // this is fix for desktop/pc - no touch - when hover
 @media (hover: hover) and (pointer: fine) {
-  .button.flat:hover {
+  .fbutton.flat:hover {
     @apply nm-inset-$f-primary;
   }
-  .button.convex:hover {
+  .fbutton.convex:hover {
     @apply nm-concave-$f-primary;
   }
-  .button.flat-noborder:hover {
+  .fbutton.flat-noborder:hover {
     @apply nm-noborder-inset-$f-primary;
   }
-  .button.convex-noborder:hover {
+  .fbutton.convex-noborder:hover {
     @apply nm-noborder-concave-$f-primary;
   }
 }

@@ -1,5 +1,5 @@
 <template>
-  <div :class="['button', btnClass, classes]" tabindex="0" @click="callback">
+  <div :class="['fbutton', btnClass, classes]" tabindex="0" @click="callback">
     <slot />
   </div>
 </template>
@@ -44,6 +44,7 @@ const props = defineProps({
   },
   nmType: {
     type: String,
+    validator: (value: string) => ['flat', 'convex'].includes(value),
     default: 'flat',
   },
   classes: {
@@ -99,7 +100,3 @@ export default defineComponent({
   name: 'FButton',
 })
 </script>
-
-<style lang="scss" scoped>
-@import '$lib/core/styles/components/fbutton.scss';
-</style>
