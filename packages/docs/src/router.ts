@@ -1,7 +1,7 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
 import Pages from './pages/index'
 
-const routes = [
+const routes: RouteRecordRaw[] = [
   {
     path: '/',
     component: Pages.Home,
@@ -13,6 +13,10 @@ const routes = [
       {
         path: 'intro',
         component: Pages.Introduction,
+      },
+      {
+        path: 'components/button',
+        component: Pages.Components.Button,
       },
     ],
   },

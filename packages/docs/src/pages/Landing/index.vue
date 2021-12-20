@@ -15,7 +15,7 @@
         <f-icon name="fly_logo" width="120px" height="120px" original />
       </section>
       <p class="pt-8 text-lg">
-        <strong>FlyUI</strong> – open-source components system for your next
+        <strong>FlyUI</strong> - open-source components system for your next
         project based on TypeScript
       </p>
       <div class="flex flex-row justify-center gap-4 pt-4">

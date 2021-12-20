@@ -7,7 +7,7 @@
 <script setup lang="ts">
 // import { defineComponent } from 'vue'
 
-import { computed, ref } from 'vue'
+import { computed, defineComponent, ref } from 'vue'
 
 const props = defineProps({
   tag: {
@@ -93,6 +93,11 @@ function callback(e: Event): void {
     emit('click', e)
   }
 }
+</script>
+<script lang="ts">
+export default defineComponent({
+  name: 'FButton',
+})
 </script>
 
 <style lang="scss" scoped>

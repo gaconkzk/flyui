@@ -40,13 +40,13 @@ const menuItems = [
   {
     type: 'item',
     label: 'Button',
-    href: '/button',
+    href: '/components/button',
     icon: 'dashicons:button',
   },
   {
     type: 'item',
     label: 'Icon',
-    href: '/icon',
+    href: '/components/icon',
     icon: 'mdi:simple-icons',
   },
   {
@@ -120,7 +120,7 @@ function toggle() {
         @apply text-lg ml-2 mt-3 uppercase;
       }
       &.item {
-        @apply flex flex-row items-center gap-2 text-md opacity-70 pl-4 py-2;
+        @apply flex flex-row items-center gap-2 text-base opacity-70 pl-4 py-2;
 
         &:hover:not(.actived) {
           @apply opacity-100 transition-transform transform translate-x-4 cursor-pointer;
@@ -145,7 +145,7 @@ function toggle() {
   }
 
   &::before {
-    @apply -z-1 rounded-r-full outline-none w-10 -l-2;
+    @apply -z-1 rounded-r-full outline-none w-10 -left-2;
     position: absolute;
     top: 0;
     display: inline-block;
