@@ -1,6 +1,6 @@
 {
   "name": "@gaconkzk/flyui-vue3",
-  "version": "0.2.8",
+  "version": "0.2.9",
   "files": [
     "dist",
     "@types",
@@ -32,25 +32,25 @@
   },
   "dependencies": {
     "@windicss/plugin-scrollbar": "^1.2.3",
-    "color": "^4.1.0",
+    "color": "^4.2.0",
     "lodash": "^4.17.21",
-    "vue": "^3.2.26"
+    "vue": "^3.2.27"
   },
   "devDependencies": {
     "@types/color": "^3.0.2",
     "@types/lodash": "^4.14.178",
-    "@types/node": "^16.11.14",
+    "@types/node": "^16.11.19",
     "@vitejs/plugin-vue": "^2.0.1",
     "@windicss/plugin-animations": "^1.0.9",
     "@yzfe/svgicon": "^1.1.0",
     "@yzfe/vue3-svgicon": "^1.0.1",
-    "sass": "^1.45.0",
+    "sass": "^1.48.0",
     "typescript": "^4.5.4",
-    "vite": "^2.7.3",
-    "vite-plugin-svg-icons": "^1.0.5",
+    "vite": "^2.7.12",
+    "vite-plugin-svg-icons": "^1.1.0",
     "vite-plugin-svgicon": "^1.0.0",
-    "vite-plugin-windicss": "^1.5.4",
+    "vite-plugin-windicss": "^1.6.2",
     "vue-tsc": "^0.28.10",
-    "windicss": "^3.4.0"
+    "windicss": "^3.4.2"
   }
 }
